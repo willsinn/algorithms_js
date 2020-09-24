@@ -18,3 +18,19 @@
 
 // Input: [1,3,5,6], 0
 // Output: 0
+
+const searchInsert = (nums, target) => {
+  for (let i = 0; i < nums.length; i++) {
+    const elem = nums[i];
+    //3 conditionals,
+    //1. if element is larger, return current index cause you wanna insert in front of the element.
+    if (elem > target) {
+      return i;
+    }
+    //2. if element is same return index
+    if (elem === target) {
+      return i;
+    }
+  }
+  return nums.length;
+};
