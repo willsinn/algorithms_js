@@ -49,3 +49,22 @@ Example 5:
 Input: "MCMXCIV"
 Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4. */
+
+var romanToInt = function (s) {
+  //1. define roman numbers as key/vals
+  const roman = { M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1 };
+
+  let num = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    const currentR = s[i];
+    const nextR = s[i + 1];
+
+    if (roman[currentR] < roman[nextR]) {
+      num -= roman[currentR];
+    } else {
+      num += roman[currentR];
+    }
+  }
+  return num;
+};
