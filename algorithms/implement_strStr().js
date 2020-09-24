@@ -18,3 +18,18 @@
 
 // Constraints:
 // haystack and needle consist only of lowercase English characters.
+
+const strStr = function (haystack, needle) {
+  if (needle === "") {
+    return 0;
+  }
+  let index = 0;
+  while (index < haystack.length) {
+    const val = haystack.substring(index, index + needle.length);
+    if (val === needle) {
+      return index;
+    }
+    index++;
+  }
+  return -1;
+};
