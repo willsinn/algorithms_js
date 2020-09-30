@@ -29,3 +29,8 @@
 // 10^3 <= salary[i] <= 10^6
 // salary[i] is unique.
 // Answers within 10^-5 of the actual value will be accepted as correct.
+
+var average = function (salary) {
+  //Check if current salary is bigger than current max or smaller than current min, if value exceeds max/min - push(add) max/min value then replace the max/min with current value.
+  //Divide value by number of elements.
+};
