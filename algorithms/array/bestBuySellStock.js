@@ -16,6 +16,7 @@
 // Output: 0
 // Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
+// first try
 var maxProfit = function (prices) {
   let sell = 0;
   let buy = 0;
@@ -35,4 +36,21 @@ var maxProfit = function (prices) {
     profit = sell - buy;
   }
   return profit;
+};
+
+// second try - completed
+
+var maxProfit = function (prices) {
+  let maxprofit = 0;
+  for (let i = 0; i < prices.length; i++) {
+    const buyPrice = prices[i];
+    for (let j = i + 1; j < prices.length; j++) {
+      const sellPrice = prices[j];
+      const profit = sellPrice - buyPrice;
+      if (profit > 0 && profit > maxprofit) {
+        maxprofit = profit;
+      }
+    }
+  }
+  return maxprofit;
 };
