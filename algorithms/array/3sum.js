@@ -19,3 +19,8 @@
 
 // 0 <= nums.length <= 3000
 // -105 <= nums[i] <= 105
+
+var threeSum = function (nums) {
+  //1. to find triplets: need to run a triple nested iterative loops which gives the sum of zero
+  //2. compare triplets to make sure that there are no duplicates.
+};
