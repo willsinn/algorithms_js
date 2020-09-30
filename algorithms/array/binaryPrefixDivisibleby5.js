@@ -25,3 +25,23 @@
 
 // 1 <= A.length <= 30000
 // A[i] is 0 or 1
+
+var prefixesDivBy5 = function (A) {
+  let arr = [];
+  let ind = 0;
+  for (let i = 0; i < A.length; i++) {
+    if (i === 0 && A[i] === 0) {
+      arr.push(true);
+      ind = 0;
+    }
+    if (A[i] === 1) {
+      arr.push(false);
+      ind++;
+    }
+    if (ind > 4) {
+      arr.push(true);
+      ind++;
+    }
+  }
+  return arr;
+};
