@@ -15,3 +15,23 @@
 // 4  5 6
 
 // Output: 6
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var countNodes = function (root) {
+  console.log(root.val, root.left, root.right);
+  //Given the conditional returns of the TreeNode, node.val must be greater than 0 to be counted.
+  //1. declare left and right outside of the loop in addition to count
+
+  //2. while left is not null, nav through tree and count nodes
+};
