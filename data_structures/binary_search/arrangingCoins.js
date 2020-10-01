@@ -32,3 +32,24 @@ var arrangeCoins = function (n) {
   //2. while the sum of coins <= n, continue incrementing count and adding to sum of coins.
   //3. return staircase stack
 };
+
+var arrangeCoins = function (n) {
+  //Creating steps begins at 1 coin, each new step will require an additional coin, progressively.
+
+  //1. declare a full staircase row count and a sum of coins stacked value.
+
+  //2. while the sum of coins <= n, continue incrementing count and adding to sum of coins.
+
+  //3. define conditional for if n === 0
+  if (n === 0) return 0;
+  let coins = n;
+  let count = 1;
+
+  while (coins > 0) {
+    coins -= count;
+    if (coins > count) {
+      count++;
+    }
+  }
+  return count;
+};
