@@ -36,3 +36,18 @@
 // letters has a length in range [2, 10000].
 // letters consists of lowercase letters, and contains at least 2 unique letters.
 // target is a lowercase letter.
+
+var nextGreatestLetter = function (letters, target) {
+  //Because we are finding the next largest letter to the target we can concat the target to the array and sort the values to order them alphabetically. From there, filter out duplicates to find the next largest letter.
+
+  //If a larger letter isn't available, return the smallest letter.
+
+  let sortedLetters = letters.concat(target);
+  sortedLetters = sortedLetters.sort();
+  let uniqueLetters = [...new Set(sortedLetters)];
+  const targetIndex = uniqueLetters.indexOf(target);
+  if (targetIndex === uniqueLetters.length - 1) {
+    return uniqueLetters[0];
+  }
+  return uniqueLetters[targetIndex + 1];
+};
