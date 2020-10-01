@@ -31,7 +31,10 @@
 var countNodes = function (root) {
   console.log(root.val, root.left, root.right);
   //Given the conditional returns of the TreeNode, node.val must be greater than 0 to be counted.
-  //1. declare left and right outside of the loop in addition to count
+  if (root == null) return 0;
+  //1. declare left and right nodes with nodeHeights, declare while loops to move down node tree for both right and left nodes.
 
-  //2. while left is not null, nav through tree and count nodes
+  //2. declare recursive function for both right and left nodes based with root.val returning 0
+
+  //3. add nodes counted from both right, left and highest level for the total nodes per tree.
 };
