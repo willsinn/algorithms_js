@@ -25,3 +25,10 @@
 // ¤ ¤
 
 // Because the 4th row is incomplete, we return 3.
+
+var arrangeCoins = function (n) {
+  //Creating steps begins at 1 coin, each new step will require an additional coin, progressively.
+  //1. declare a full staircase row count and a sum of coins stacked value.
+  //2. while the sum of coins <= n, continue incrementing count and adding to sum of coins.
+  //3. return staircase stack
+};
