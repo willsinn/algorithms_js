@@ -17,3 +17,14 @@
 // You may assume that all elements in nums are unique.
 // n will be in the range [1, 10000].
 // The value of each element in nums will be in the range [-9999, 9999].
+
+var search = function (nums, target) {
+  //Filter through array for target value, if value exists - return index of the value. If value doesnt exist, return -1
+  let output = -1;
+  nums.forEach((num, i) => {
+    if (num === target) {
+      output = i;
+    }
+  });
+  return output;
+};
