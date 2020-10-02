@@ -17,3 +17,12 @@
 // Constraints:
 
 // 0 <= n <= 5 * 106
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var countPrimes = function (n) {
+  //1. Only count NON-neg numbers less than given value n
+  if (n <= 1) return 0;
+};
