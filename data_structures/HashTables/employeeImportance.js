@@ -30,9 +30,50 @@
  * @param {number} id
  * @return {number}
  */
+/**
+ * Definition for Employee.
+ * function Employee(id, importance, subordinates) {
+ *     this.id = id;
+ *     this.importance = importance;
+ *     this.subordinates = subordinates;
+ * }
+ */
+
+/**
+ * @param {Employee[]} employees
+ * @param {number} id
+ * @return {number}
+ */
 var GetImportance = function (employees, id) {
   //Assuming that employee id's are unique find total importance value by iterating through depth 0 array
-  //1. Return the target id's object from array of employees.
+  //1. Return the target's subordinates
+  let val = 0;
+  const target = employees.filter((employee) => employee.id === id);
+  val += target[0].importance;
+  const subs = target[0].subordinates;
+  console.log(subs);
+  if (subs.length > 0) {
+    subs.forEach((s) => {
+      const sub = employees.filter((e) => e.id === s);
+      console.log(sub);
+      val += sub[0].importance;
+      if (sub[0].subordinates.length > 0) {
+        sub[0].subordinates.forEach((t) => {
+          const subsub = employees.filter((e) => e.id === t);
+          val += subsub[0].importance;
+        });
+      }
+    });
+  }
+  return val;
+
   //2. Targeting employee's subordinates, filter all employees listed within the prop
+
   //3. Combine target id's importance value with subordinates to find the total importance value
+
+  //                 sub[0].subordinates.forEach(su => {
+  //                  const sub2 = employees.filter(e => e.id === s);
+
+  //                 })
+  //             }
 };
