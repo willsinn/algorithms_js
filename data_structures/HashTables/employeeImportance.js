@@ -15,3 +15,24 @@
 
 // One employee has at most one direct leader and may have several subordinates.
 // The maximum number of employees won't exceed 2000.
+
+/**
+ * Definition for Employee.
+ * function Employee(id, importance, subordinates) {
+ *     this.id = id;
+ *     this.importance = importance;
+ *     this.subordinates = subordinates;
+ * }
+ */
+
+/**
+ * @param {Employee[]} employees
+ * @param {number} id
+ * @return {number}
+ */
+var GetImportance = function (employees, id) {
+  //Assuming that employee id's are unique find total importance value by iterating through depth 0 array
+  //1. Return the target id's object from array of employees.
+  //2. Targeting employee's subordinates, filter all employees listed within the prop
+  //3. Combine target id's importance value with subordinates to find the total importance value
+};
