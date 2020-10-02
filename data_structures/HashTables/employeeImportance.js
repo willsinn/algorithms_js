@@ -70,10 +70,4 @@ var GetImportance = function (employees, id) {
   //2. Targeting employee's subordinates, filter all employees listed within the prop
 
   //3. Combine target id's importance value with subordinates to find the total importance value
-
-  //                 sub[0].subordinates.forEach(su => {
-  //                  const sub2 = employees.filter(e => e.id === s);
-
-  //                 })
-  //             }
 };
