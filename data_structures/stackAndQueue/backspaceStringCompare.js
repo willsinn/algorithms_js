@@ -30,3 +30,12 @@
 // Follow up:
 
 // Can you solve it in O(N) time and O(1) space?
+
+/**
+ * @param {string} S
+ * @param {string} T
+ * @return {boolean}
+ */
+var backspaceCompare = function (S, T) {
+  //return true if S & T strings are equal after all the backspaces
+};
