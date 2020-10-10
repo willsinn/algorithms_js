@@ -31,11 +31,21 @@
 
 // Can you solve it in O(N) time and O(1) space?
 
-/**
- * @param {string} S
- * @param {string} T
- * @return {boolean}
- */
 var backspaceCompare = function (S, T) {
   //return true if S & T strings are equal after all the backspaces
+  //Loop through S & T individually and evaluate outcome, compare assigned outcomes
+
+  let backS = "";
+  let backT = "";
+
+  [...S].forEach((char) => {
+    if (char === "#") {
+      const updated = backS.slice(0, -1);
+      console.log(updated);
+      backS = updated;
+    }
+    if (char !== "#") {
+      backS += char;
+    }
+  });
 };
