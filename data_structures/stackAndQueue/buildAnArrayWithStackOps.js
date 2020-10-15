@@ -39,5 +39,3 @@
 // 1 <= target[i] <= 100
 // 1 <= n <= 100
 // target is strictly increasing.
-
-/*Push and pop to solve for answer.*/
