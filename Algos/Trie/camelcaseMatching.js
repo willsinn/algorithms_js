@@ -43,6 +43,7 @@
 // 1 <= queries[i].length <= 100
 // 1 <= pattern.length <= 100
 // All strings consists only of lower and upper case English letters.
+
 /**
  * @param {string[]} queries
  * @param {string} pattern
@@ -50,9 +51,25 @@
  */
 var camelMatch = function(queries, pattern) {
     const set = new Set(queries);
-     console.log(set);
      // convert queries to Set for clarity, for of loop through queries and push boolean to arr;
      //iterate the query string, if first pattern char === first uppercase, splice, if lowercase === splice
      //if Next uppercase letter !== first char return false;
-     
+     const arr = [];
+     for (query of set) {
+         let pat = pattern;
+         [...query].forEach(letter => {
+             const low = letter.toLowerCase();
+             const patLow = pat.charAt(1).toLowerCase();
+             const leftoverPat = pat.slice(1, pat.length-1);
+             if (pat.length === 0) {arr.push(true)}
+             if (low !== letter  && patLow !== pat[0]) {
+                 if(letter !== pat[0]) {
+                 arr.push(false)
+                 }
+ 
+             }
+             pat = leftoverPat;
+         })
+     }
+     return arr
  };
