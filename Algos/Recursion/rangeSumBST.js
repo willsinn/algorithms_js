@@ -48,3 +48,32 @@ var rangeSumBST = function(root, L, R) {
     // basecase, return sum val if L, R null
     
 };
+
+
+
+
+// example recursive function
+const categories = [
+    {id:"animals", parent:null},
+    {id:"mammals", parent:"animals"},
+    {id:"cats", parent:"mammals"},
+    {id:"dogs", parent:"mammals"},
+    {id:"corgi", parent:"dogs"},
+    {id:"shorthair", parent:"cats"},
+    {id:"dashcheund", parent:"dogs"},
+    {id:"normal", parent:"cats"},
+    {id:"tiny", parent:"dogs"},
+]
+
+
+const makeTree = (categories, parent)=> {
+    let node = {};
+    categories.filter(c => c.parent === parent).forEach((c) => {
+        node[c.id] = makeTree(categories, c.id);
+        console.log("node", node, node[c.id]);
+})
+    return node;
+}
+
+
+console.log(JSON.stringify(makeTree(categories,null), null, 2))
