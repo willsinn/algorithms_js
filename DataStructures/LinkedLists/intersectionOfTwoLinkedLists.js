@@ -49,3 +49,28 @@
 // You may assume there are no cycles anywhere in the entire linked structure.
 // Each value on each linked list is in the range [1, 10^9].
 // Your code should preferably run in O(n) time and use only O(1) memory.
+
+var getIntersectionNode = function(headA, headB) {
+    let arrs = {A:[],B:[]};
+    let hA = headA;
+    let hB = headB;
+    while (hA && hB) {
+        if (hA.val) {
+            arrs.A = [...arrs.A, hA.val];
+        }
+         if (hB.val) {
+            arrs.B = [...arrs.B, hB.val];
+        }
+        hA = hA.next;
+        hB = hB.next;
+    }
+    let intersect = null;
+    let idx;
+    arrs.B.forEach((v, i) => {
+        console.log(arrs.A.includes(v));
+     if (arrs.A.includes())
+    })
+    // console.log(arrs)
+    //extract values from headA & headB
+    //iterate through the shorter list and check if longer list includes value, matching value is the reference val for intersecting node
+};
