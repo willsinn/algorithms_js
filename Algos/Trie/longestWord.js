@@ -28,3 +28,13 @@
 // All the strings in the input will only contain lowercase letters.
 // The length of words will be in the range [1, 1000].
 // The length of words[i] will be in the range [1, 30].
+/**
+ * @param {string[]} words
+ * @return {string}
+ */
+var longestWord = function(words) {
+    //sort words by length, extract elements decrementally from last elem and iterate substrings while checking for the substring. If all substrings up to the word exists, push to lexiArr.
+    //sort lexiArr and return the first element
+    const arr = words.sort();
+    
+};
