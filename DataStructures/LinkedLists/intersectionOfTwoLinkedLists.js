@@ -68,7 +68,7 @@ var getIntersectionNode = function(headA, headB) {
     let idx;
     arrs.B.forEach((v, i) => {
         console.log(arrs.A.includes(v));
-     if (arrs.A.includes())
+     if (arrs.A.includes()){}
     })
     // console.log(arrs)
     //extract values from headA & headB
