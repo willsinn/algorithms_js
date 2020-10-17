@@ -50,3 +50,29 @@ var calPoints = function (ops) {
   });
   console.log(newOps);
 };
+
+//second try
+var calPoints = function(ops) {
+  //Declare points and rounds array to keep track of valid rounds and scores. Iterate through ops and include conditionals for "C", "D", "+" and stringed integers.
+  let arr = [];
+  for (let i = 0; i < ops.length; i++) {
+      const o = ops[i];
+      const int = parseInt(o);
+
+      if (o === "C") arr.pop();
+      
+      if (o === "D") {
+          const prev = arr[arr.length-1];
+          arr.push(prev*2)
+      }
+      if (o === "+") {
+          const plus = arr[arr.length-2] + arr[arr.length -1];
+          arr.push(plus)
+      }
+      if (int) {
+          arr.push(int);
+      }
+  }
+  let sum = arr.reduce((a, c) => {return a + c}, 0)
+  return sum
+};
