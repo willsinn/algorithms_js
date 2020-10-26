@@ -62,3 +62,32 @@ var findJudge = function(N, trust) {
     // 1. filter through nested pairs and check if the second element is equal to N.
     // 2. check length of nested array trust, where if length is not equal return -1 else N.
 };
+
+/**
+ * @param {number} N
+ * @param {number[][]} trust
+ * @return {number}
+ */
+var findJudge = function(N, trust) {
+    // Directed graph where a trusts b and not in reverse, given N, check each pair's b for N.
+    // If b returns false, return -1. True, return N.
+    
+    // Code
+    // 1. filter through nested pairs and check if the second element is equal to N.
+    // 2. check length of nested array trust, where if length is not equal return -1 else N.
+    
+
+//     return -1;
+    
+    let person = 1;
+    
+    while (person <= N) {
+        const judge = trust.filter(t => t[0] === person);
+        if (judge.length === 0) {
+            const trustsJudges = trust.filter(t => t[1] === person);
+            if (trustsJudges.length === trust.length) return person;
+        }
+        person ++;
+    }
+    return -1;
+};
