@@ -51,3 +51,14 @@
 // trust[i] are all different
 // trust[i][0] != trust[i][1]
 // 1 <= trust[i][0], trust[i][1] <= N
+
+
+
+var findJudge = function(N, trust) {
+    // Directed graph where a trusts b and not in reverse, given N, check each pair's b for N.
+    // If b returns false, return -1. True, return N.
+    
+    // Code
+    // 1. filter through nested pairs and check if the second element is equal to N.
+    // 2. check length of nested array trust, where if length is not equal return -1 else N.
+};

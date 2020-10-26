@@ -22,7 +22,7 @@
 //
 
 var threeSum = function (nums) {
-  1. to find triplets: need to run a triple nested iterative loops which gives the sum of zero
+  // 1. to find triplets: need to run a triple nested iterative loops which gives the sum of zero
   let triplets = [];
   for (let i = 0; i < nums.length; i++) {
     const firstElem = nums[i];
