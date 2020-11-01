@@ -18,7 +18,7 @@ const deduplicatedArray = (d) => {
     }
     newArray.sort();
     return newArray;
-    O(3n)
+    // O(3n)
 
     //3. return new array 
 
@@ -37,7 +37,7 @@ const deduplicatedArray = (d) => {
 
     return deduplicatedArray;
 
-    O(2n)
+    // O(2n)
 }
 
 
