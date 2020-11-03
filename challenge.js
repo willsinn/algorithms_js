@@ -54,7 +54,6 @@ changeName(myName);
 
 console.log(myName) // Rob
 
-==========================
 const myCar = { // dfahufhish2984
     color: "red",
     make: "Ford"
