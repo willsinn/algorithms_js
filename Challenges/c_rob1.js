@@ -1,4 +1,4 @@
-given an array of [1, 3, 1, 4, 5, 2], return a new array with deduplicated and sorted entries
+// given an array of [1, 3, 1, 4, 5, 2], return a new array with deduplicated and sorted entries
 
 
 //1. can the array be empty?
