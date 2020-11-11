@@ -23,29 +23,23 @@
 // The range of node's value is in the range of 32-bit signed integer.
 
 
-//JS BFS
-// Another method to solve the given problem is to make use of a Breadth First Search. In BFS, we start by pushing the root node into a queuequeue. Then, we remove an element(node) from the front of the queuequeue. For every node removed from the queuequeue, we add all its children to the back of the same queuequeue. We keep on continuing this process till the queuequeue becomes empty. In this way, we can traverse the given tree on a level-by-level basis.
-
-// But, in the current implementation, we need to do a slight modification, since we need to separate the nodes on one level from that of the other.
-
-// The steps to be performed are listed below:
-
-// Put the root node into the queuequeue.
-
-// Initialize sumsum and countcount as 0 and temptemp as an empty queue.
-
-// Pop a node from the front of the queuequeue. Add this node's value to the sumsum corresponding to the current level. Also, update the countcount corresponding to the current level.
-
-// Put the children nodes of the node last popped into the a temptemp queue(instead of queuequeue).
-
-// Continue steps 3 and 4 till queuequeue becomes empty. (An empty queuequeue indicates that one level of the tree has been considered).
-
-// Reinitialize queuequeue with its value as temptemp.
-
-// Populate the resres array with the average corresponding to the current level.
-
-// Repeat steps 2 to 7 till the queuequeue and temptemp become empty.
-
-// At the end, resres is the required result.
-
-// The following animation illustrates the process.
+//JS BFS, queue.
+function traverseBFS(root) {
+    let queue = [root]
+    let res = []
+    
+    while (queue.length) {      
+      let curr = queue.shift()
+      res.push(curr.key)
+      
+      if (curr.right){
+        queue.push(curr.right)
+      }
+      
+      if (curr.left){
+        queue.push(curr.left)
+      }
+    }
+    
+    return res
+  }
