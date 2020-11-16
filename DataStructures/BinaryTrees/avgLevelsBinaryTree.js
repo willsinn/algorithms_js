@@ -24,6 +24,7 @@
 
 
 //JS BFS, queue.
+// https://medium.com/@jpoechill/iterative-bfs-and-dfs-in-javascript-537bb7b0bbfd
 function traverseBFS(root) {
     let queue = [root]
     let res = []
