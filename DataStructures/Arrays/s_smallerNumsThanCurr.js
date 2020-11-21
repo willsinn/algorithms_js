@@ -29,3 +29,16 @@
 // 2 <= nums.length <= 500
 // 0 <= nums[i] <= 100
 
+const smallerNumbersThanCurrent = function(nums) {
+    const output = [];
+    for (let i = 0; i < nums.length; i++) {
+        const current = nums[i];
+        let smallerCount = 0;
+        for (let j = 0; j < nums.length; j++) {
+            const currentJ = nums[j];
+            if (current > currentJ) smallerCount++;
+        }
+        output.push(smallerCount)
+    }
+    return output
+};
