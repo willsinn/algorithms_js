@@ -42,3 +42,26 @@
 
 // 1 <= s.length <= 500
 // s contains only lowercase English letters.
+
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxPower = function(s) {
+    let highestPower = 1;
+    let currentPower = 1;
+    let stringLetter;
+    [...s].forEach(l => {
+        const currentLetter = l;
+        if (stringLetter === currentLetter) {
+            currentPower++;
+            if (currentPower > highestPower) highestPower = currentPower;
+        }
+        if (!stringLetter || stringLetter !== currentLetter) {
+            currentPower = 1;
+            stringLetter = currentLetter;
+        }
+    })
+    return highestPower
+};
