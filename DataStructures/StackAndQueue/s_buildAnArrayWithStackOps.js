@@ -40,8 +40,16 @@
 // 1 <= n <= 100
 // target is strictly increasing.
 
-var buildArray = function(target, n) {
-    console.log(target, n);
-    //converting target nums to Push and Pop while incrementing up to n
-    //because target input is strictly increasing, the index of target length - 1 will be the exit condition
+const buildArray = function(target, n) {
+    const pushPopArr = [];
+    let counter = 1;
+    const max = target[target.length - 1];
+    while (counter <= max) {
+        pushPopArr.push("Push")
+        if (!target.includes(counter)) {
+            pushPopArr.push("Pop")
+        } 
+        counter++;
+    }
+    return pushPopArr;
 };
