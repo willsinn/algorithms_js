@@ -40,3 +40,14 @@
 // 95,428
 // Submissions
 // 176,041
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const findShortestSubArray = function(nums) {
+    //1. Find the degree of the array which is the maximum frequency of an element.
+    
+    //2. Return the length of the subarray from the first appearance of the element to the last.
+};
