@@ -26,16 +26,5 @@
  */
 var isCousins = function (root, x, y) {
   //Cousins are values that have the same depth but diff parents, go through both sides of the binary and match the values to return the depth of X & depth of Y.
-  let leftRoot = root;
-  let depth = 0;
-  let leftDepth;
-  while (leftRoot.val !== null) {
-    if (leftRoot.val === x || leftRoot.val === y) {
-      return (leftDepth = depth);
-    }
-    leftRoot = leftRoot.left;
-    depth++;
-  }
-
-  console.log(leftDepth);
+ 
 };
