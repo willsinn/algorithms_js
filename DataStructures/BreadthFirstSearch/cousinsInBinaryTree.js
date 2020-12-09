@@ -24,7 +24,7 @@
  * @param {number} y
  * @return {boolean}
  */
-var isCousins = function (root, x, y) {
+const isCousins = function (root, x, y) {
   //Cousins are values that have the same depth but diff parents, go through both sides of the binary and match the values to return the depth of X & depth of Y.
  
 };
