@@ -38,3 +38,12 @@
 // 86,437
 // Submissions
 // 195,694
+
+
+/**
+ * @param {number[][]} coordinates
+ * @return {boolean}
+ */
+const checkStraightLine = function(coordinates) {
+    
+};
