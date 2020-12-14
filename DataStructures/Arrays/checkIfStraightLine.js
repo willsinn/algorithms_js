@@ -45,5 +45,8 @@
  * @return {boolean}
  */
 const checkStraightLine = function(coordinates) {
-    
+        // The first two points declare the slope for the line.
+        // If the difference of X or Y change then false.
+        
+        let slopeX, slopeY;
 };
