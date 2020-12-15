@@ -48,5 +48,25 @@ const checkStraightLine = function(coordinates) {
         // The first two points declare the slope for the line.
         // If the difference of X or Y change then false.
         
-        let slopeX, slopeY;
-};
+        let slopeX = coordinates[0][0] - coordinates[1][0];
+        let slopeY = coordinates[0][1] - coordinates[1][1];
+            // console.log(slopeX, slopeY);
+        
+        coordinates.forEach((coordinate, index) => {
+            //compare the current coordinate to the past coordinate
+            if (index > 0) {
+                const currentX = coordinate[0];  
+                const currentY = coordinate[1];
+                const lastX = coordinates[index - 1][0];
+                const lastY = coordinates[index - 1][0];
+                const slopeCheckX = lastX - currentX;
+                const slopeCheckY = lastY - currentY;
+                // console.log(lastX - currentX);
+                if (slopeX !== slopeCheckX || slopeY !== slopeCheckY) {
+                    return false
+                }
+                
+            }
+        })
+        return true
+    };
