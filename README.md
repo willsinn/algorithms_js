@@ -6,7 +6,7 @@
 
 1.  ## Depth First Search - Stack - https://www.youtube.com/watch?v=7fujbpJ0LB4
     `Time Complexity` - O(V+E)
-    `Best Use Cases` - Count Connected Components, Determine Connectivity, Find Bridges/Articulation Points (Articulation points represent vulnerabilities in a connected network – single points whose failure would split the network into 2 or more components.)
+    `Best Use Cases` - Count Connected Components, Determine Connectivity, Find Bridges/Articulation Points (Articulation points represent vulnerabilities in a connected network – single points whose failure would split the network into 2 or more components.), Compute a Graph's Minimum Spanning Tree, Check if Graph is Bipartite, Topologically sort nodes of a Graph, Generate Mazes.
     `How it works` - Explore nodes until null cannot re-explore a node that is currently being explored, if either happen - backtrack to a node that can continue exploring.
     `Tricks & Tips` - Mark the nodes traversed as true or with an id.
 2.  Breadth First Search - Queue
