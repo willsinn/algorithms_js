@@ -1,3 +1,11 @@
+# Questions
+
+Whats the difference between...
+const function = function();
+function()
+const function = () => {}
+https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
+
 # Algorithm Notes
 
 - BigO notation: https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/
