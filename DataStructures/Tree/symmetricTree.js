@@ -48,6 +48,9 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+
+
+ 
 var isSymmetric = function(root) {
     //Base Case
     if (something) return false;
