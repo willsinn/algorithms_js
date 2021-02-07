@@ -54,3 +54,13 @@
 // 770,948
 // Submissions
 // 1,568,172
+
+
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function(nums, val) {
+    
+};
