@@ -61,6 +61,26 @@
  * @param {number} val
  * @return {number}
  */
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
 var removeElement = function(nums, val) {
+    //1. Iterate the nums array.
+    //2. Add conditional code block that checks if iteration equals val.
+    //3. If the iteration equals val, replace the value with -1.
+    //4. Filter out all the -1's the nums array.
+    //5. return length
+    let count = 0;
     
+    while (nums.length > count) {
+        const num = nums[count];
+        
+        if (num === val) {
+            nums.splice(count, 1);
+        } else {
+            count++; 
+        }
+    }
 };
