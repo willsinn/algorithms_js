@@ -50,11 +50,36 @@
  */
 
 
- 
+ /**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
 var isSymmetric = function(root) {
-    //Base Case
-    if (something) return false;
-    
-    //Return true if right side iteration === left side iteration
-    return (iterate right side of root tree === iterate left side of root tree) 
-}
+    if (!root) { //Checks if root exists, if not it is a perfect mirror
+        return true
+    }
+    function isMirror(s, t) {
+        console.log(s, "I am S")
+        console.log(t, "I am T")
+        
+        if (!s && !t) {
+            return true; // Both nodes are null, ok
+        }
+        if (!s || !t || s.val !== t.val) {
+            return false; // Found a mismatch
+        }
+        // Compare the left subtree of `s` with the right subtree of `t`
+        // and the right subtree of `s` with the left subtree of `t`
+        return isMirror(s.left, t.right) && isMirror(s.right, t.left);
+    }
+
+    return isMirror(root.left, root.right);
+};
