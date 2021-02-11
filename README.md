@@ -30,3 +30,5 @@ https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
 8.  Recursion - What you’re doing at every iteration & Base Case
 9.  Construct Data Structures - construct a Class method (OO programming)
 10. Binary Search - Find the CRASH version of an application on GitHub (Logn)
+
+## Skilled Clinic
