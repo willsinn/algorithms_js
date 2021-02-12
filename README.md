@@ -9,6 +9,8 @@ https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
 # Algorithm Notes
 
 - BigO notation: https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/
+- Omega Notation
+- For Arrays: adding an element is O(1), removing an element is O(N)
 
 # Algoexpert - most important algorithms to know
 
