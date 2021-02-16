@@ -40,5 +40,5 @@
  */
 var sortedArrayToBST = function(nums) {
     // Start at the middle of the array, break it into two then continue breaking it into two.
-    //1.
+    //1. figure out height of the tree.
 };
