@@ -42,6 +42,7 @@ var sortedArrayToBST = function(nums) {
     // Start at the middle of the array, break it into two then continue breaking it into two.
     // 1. figure out height of the tree.
 
-    //TREES ARE OBJECTS. NESTED OBJECTS....
-    
-};
+    // TREES ARE OBJECTS. Think of them as nested objects
+    // BST requires left node to be less than parent, right to be greater than parent.
+    // BSTs have two leaf nodes.
+}
