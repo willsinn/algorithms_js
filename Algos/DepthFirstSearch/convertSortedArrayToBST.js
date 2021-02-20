@@ -44,5 +44,9 @@ var sortedArrayToBST = function(nums) {
 
     // TREES ARE OBJECTS. Think of them as nested objects
     // BST requires left node to be less than parent, right to be greater than parent.
-    // BSTs have two leaf nodes.
+    // BSTs have two child nodes.
+
+
+    // subtrees are BSTs as well
+
 }
