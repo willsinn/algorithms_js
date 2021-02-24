@@ -34,10 +34,10 @@ const hasPathSum = function(root, sum) {
 
 let arr = [];
     
-for (props in root) {
-    const currentVal = root.val;
-    arr.push(currentVal);
-    root = root.left
-    console.log(props, root.val)
-}
+    for (props in root) {
+        const currentVal = root.val;
+        arr.push(currentVal);
+        root = root.left
+        console.log(props, root.val)
+    }
 }
