@@ -29,3 +29,15 @@
 // 542,022
 // Submissions
 // 1,294,780
+
+const hasPathSum = function(root, sum) {
+
+let arr = [];
+    
+for (props in root) {
+    const currentVal = root.val;
+    arr.push(currentVal);
+    root = root.left
+    console.log(props, root.val)
+}
+}
