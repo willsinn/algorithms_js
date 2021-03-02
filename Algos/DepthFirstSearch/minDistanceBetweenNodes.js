@@ -30,3 +30,49 @@
 
 // The number of nodes in the tree is in the range [2, 100].
 // 0 <= Node.val <= 105
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minDiffInBST = function(root) {
+    let nums = {
+        low: null,
+        high: null
+    }
+    const dfs = (node, low, high) => {
+        if (!node) return;
+        
+        if (!low || !high) {
+            nums.low = node.val;
+            high = node.val
+        }
+        
+        if (low === high) {
+            if (node.val > low) {
+                high = node.val
+            }
+            if (node.val < low) {
+                low = node.val
+            }
+        }
+        
+        if (low < node.val < high) {
+        }
+        
+        dfs(node.left, low, high)
+        dfs(node.right, low, high)
+        
+    }
+        dfs(root, nums.low, nums.high)
+    console.log(nums)
+
+};
