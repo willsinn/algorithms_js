@@ -48,3 +48,43 @@
 
 // The number of nodes in each tree will be in the range [1, 200].
 // Both of the given trees will have values in the range [0, 200].
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {boolean}
+ */
+var leafSimilar = function(root1, root2) {
+    let leaves1 = [];
+    dfs(root1, leaves1);
+    let leaves2 = [];
+    dfs(root2, leaves2);
+
+    if (leaves1.length !== leaves2.length) return false;
+    
+    for (let i=0; i < leaves1.length;i++) {
+        if (leaves1[i] !== leaves2[i]) {
+            return false
+        }
+    }
+    return true;
+    function dfs(node, arr) {
+        if (!node) return
+        
+        if(node.right === null && node.left === null) {
+            arr.push(node.val)
+            return;
+        }
+        
+        dfs(node.left, arr);
+        dfs(node.right, arr)
+    }
+};
