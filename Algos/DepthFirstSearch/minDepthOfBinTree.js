@@ -35,3 +35,36 @@
 // 527,945
 // Submissions
 // 1,334,795
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minDepth = function(root) {
+    let depth = 1;
+    let allDepths = [];
+    dfs(root)
+    function dfs(node) {
+        if (!node) return;
+        
+        depth++;
+        console.log(node.val)
+        if (!node.left && !node.right) {
+            allDepths.push(depth)
+            depth = 1;
+        }
+        dfs(node.left)
+        dfs(node.right)
+        
+    }
+    const sortedDepths = allDepths.sort()
+    return sortedDepths[0];
+};
