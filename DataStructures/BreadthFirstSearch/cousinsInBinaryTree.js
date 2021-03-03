@@ -24,7 +24,25 @@
  * @param {number} y
  * @return {boolean}
  */
-const isCousins = function (root, x, y) {
-  //Cousins are values that have the same depth but diff parents, go through both sides of the binary and match the values to return the depth of X & depth of Y.
- 
+var isCousins = function(root, x, y) {
+  let queue = [];
+  let depth = 1;
+  
+  bfs(root)
+  function bfs(node) {
+      if (!node) return;
+      console.log(node, depth)
+      queue.push({ value: node.val, depth: depth})
+      depth++
+      bfs(node.left);
+      bfs(node.right);
+  
+  }
+  const cousins = queue.filter(c => c.value === x || c.value === y)
+  if (cousins[0].depth !== cousins[1].depth) return false
+  console.log(cousins)
+  // if (queue[`${x}`].depth != queue[`${y}`].depth) return false;
+  
+  return true;
+  
 };

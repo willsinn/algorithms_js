@@ -1,6 +1,6 @@
 Algoexpert:
 ☐ 1. Depth First Search - Stack
-☐ 2. Breadth First Search - Queue
+☐ 2. Breadth First Search - Queue - to find shortest path to a target node.
 ☐ 3. Matching Parenthesis - Stack
 ☐ 4. Hash Tables - Fibonacci’s Sequence
 ☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String
@@ -10,8 +10,18 @@ Algoexpert:
 ☐ 9. Construct Data Structures - construct a Class method (OO programming) 
 ☐ 10. Binary Search - Find the CRASH version of an application on GitHub (Logn)
 
-Algorithms
+Algorithms:
 String, Matrix, Heap, Graph, Sorting, Dynamic Programming, Bit Manipulation, Combinations, Permutations, Math, Trie
 
-Data Structures
+Data Structures:
 Hash Tables, Binary Search Tree, Array, Graph, Queues, Linked Lists, Tree
+
+Things to know:
+    ☐ How to declare a new tree
+        let treeNode = new TreeNode(0)
+        let current = treeNode    
+        for (let i = 0; i < stack.length ;i++) {
+            current.right = new TreeNode(stack[i])
+            current = current.right
+        }
+    ☐ Graphs/Trees Nodes have to keep track of their edges as a property with an [] value.
