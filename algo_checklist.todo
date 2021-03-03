@@ -17,11 +17,22 @@ Data Structures:
 Hash Tables, Binary Search Tree, Array, Graph, Queues, Linked Lists, Tree
 
 Things to know:
-    ☐ How to declare a new tree
+    - How to declare a new tree
         let treeNode = new TreeNode(0)
         let current = treeNode    
         for (let i = 0; i < stack.length ;i++) {
             current.right = new TreeNode(stack[i])
             current = current.right
         }
-    ☐ Graphs/Trees Nodes have to keep track of their edges as a property with an [] value.
+    - Graphs/Trees Nodes have to keep track of their edges as a property with an [] value.
+    - How to declare Hash Map     
+        let map = {
+            2: ['a', 'b', 'c'],
+            3: ['d', 'e', 'f'],
+            4: ['g', 'h', 'i'],
+            5: ['j', 'k', 'l'],
+            6: ['m', 'n', 'o'],
+            7: ['p', 'q', 'r', 's'],
+            8: ['t', 'u', 'v'],
+            9: ['w', 'x', 'y', 'z'],
+        }
