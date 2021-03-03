@@ -35,3 +35,42 @@
 // 783,853
 // Submissions
 // 1,383,412
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var levelOrder = function(root) {
+    let result = [];
+    
+    //1. keep track of how many elems in each row (1,2,4,8) max. Add root to queue (first row).
+    //2. Shift elem off queue.
+    //3. Check if elem has children, add children to queue (not null).
+    //4. Push to row, push row to result
+    if (!root) {
+        return result;
+    }
+    
+    let queue = [];
+    queue.push(root);
+    
+    while (queue.length > 0) {
+        let row = [];
+        let rowSize = queue.length;
+        
+        while (rowSize > 0) {
+            
+        }
+        
+    }
+    
+};
