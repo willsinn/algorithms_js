@@ -38,3 +38,20 @@
 // 767,380
 // Submissions
 // 1,562,461
+
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+const letterCombinations = function(digits) {
+    const letters = [
+        { num:"2", vals:"abc"},
+        { num:"3", vals:"def"},
+        { num:"4", vals:"ghi"},
+        { num:"5", vals:"jkl"},
+        { num:"6", vals:"mno"},
+        { num:"7", vals:"pqrs"},
+        { num:"8", vals:"tuv"},
+        { num:"9", vals:"wxyz"},
+    ]
+};
