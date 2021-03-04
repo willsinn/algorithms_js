@@ -49,12 +49,43 @@
  * @param {number} R
  * @return {number}
  */
+
+ 
+ /**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} L
+ * @param {number} R
+ * @return {number}
+ */
 var rangeSumBST = function(root, L, R) {
-    // console.log(root, L, R)
+    if (!root) return;
+    
     let sum = 0;
-    const val0 = root.val;
-    if (L <= val0 <= R) {
-        sum += val0;
+    dfs(root)
+    function dfs(node) {
+        if (!node) return;
+         
+        if (node.val < L) {
+            dfs(node.right);
+            return;
+        }
+        
+        if (node.val > R) {
+            dfs(node.left);
+            return;
+        }
+        
+        sum += node.val;
+        dfs(node.left);
+        dfs(node.right);
     }
-    console.log(sum)
+    return sum
 };
