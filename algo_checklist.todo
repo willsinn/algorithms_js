@@ -1,6 +1,13 @@
 Algoexpert:
 ☐ 1. Depth First Search - Stack
+    Depth First Traversals:
+        (a) Inorder (Left, Root, Right) 
+        (b) Preorder (Root, Left, Right)
+        (c) Postorder (Left, Right, Root)
+
 ☐ 2. Breadth First Search - Queue - to find shortest path to a target node.
+    - Use Enqueue (insert into queue) and Dequeue as variable names.
+
 ☐ 3. Matching Parenthesis - Stack
 ☐ 4. Hash Tables - Fibonacci’s Sequence
 ☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String
