@@ -43,3 +43,6 @@ Things to know:
             8: ['t', 'u', 'v'],
             9: ['w', 'x', 'y', 'z'],
         }
+    - Iterating over an object can be done with:
+        for(const [key, value] of Object.entries(obj))
+        for(const key in Obj)
