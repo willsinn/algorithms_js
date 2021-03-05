@@ -26,8 +26,9 @@ https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
 
 2.  ## Breadth First Search - Queue - to find shortest path to a target node.
 
-    How it works - traverse all nodes left to right by depth before moving onto next depth.
-    Uses While loop
+    - How it works - traverse all nodes left to right by depth before moving onto next depth.
+    - Uses While loop
+    - The insertion operation is called enqueue, and the removal operation is called dequeue.
 
 3.  Matching Parenthesis - Stack
 4.  Hash Tables - Fibonacci’s Sequence

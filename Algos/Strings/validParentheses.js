@@ -37,3 +37,24 @@ Example 5:
 Input: "{[]}"
 Output: true
 */
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+const isValid = function(s) {
+    let left = [];
+    let legend = {
+        "{":"}",
+        "[":"]",
+        "(":")"
+    }
+    for (let i = 0; i < s.length; i++) {
+    if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
+      left.push(s[i]);    
+    } else if (legend[left.pop()] !== s[i]) {
+      return false;
+    }
+  }
+  return left.length ? 0 : 1;
+};
