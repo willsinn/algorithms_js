@@ -1,17 +1,19 @@
 Algoexpert:
-☐ 1. Depth First Search - Stack
+☐ 1. Depth First Search - Stack @critical 
+    Setting up a DFS, recursion:
+        (a) write a dfs helper function
+        (b) set up base case, for tree/graphs it is checking if the node is null.
+        (c) call the helper function for both right/left nodes 
     Depth First Traversals:
         (a) Inorder (Left, Root, Right) 
         (b) Preorder (Root, Left, Right)
         (c) Postorder (Left, Right, Root)
-
-☐ 2. Breadth First Search - Queue - to find shortest path to a target node.
-    - Use Enqueue (insert into queue) and Dequeue as variable names.
-
-☐ 3. Matching Parenthesis - Stack
-☐ 4. Hash Tables - Fibonacci’s Sequence
-☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String
-☐ 6. Reversing a Linked List - Use 3 Pointers
+☐ 2. Breadth First Search - Queue - to find shortest path to a target node. @critical 
+    
+☐ 3. Matching Parenthesis - Stack @critical 
+☐ 4. Hash Tables - Fibonacci’s Sequence @critical
+☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String @critical
+☐ 6. Reversing a Linked List - Use 3 Pointers @critical
 ☐ 7. Sorting Fundamentals - Understand concepts of Merge Sort, Quick Sort (Choose a Pivot - Divide in half), Insertion Sort and know the Runtime (BigO of nLogn)
 ☐ 8. Recursion - What you’re doing at every iteration & Base Case
 ☐ 9. Construct Data Structures - construct a Class method (OO programming) 
@@ -46,3 +48,4 @@ Things to know:
     - Iterating over an object can be done with:
         for(const [key, value] of Object.entries(obj))
         for(const key in Obj)
+    - 
