@@ -51,3 +51,19 @@
 // 1,332,916
 // Submissions
 // 2,858,872
+
+
+var removeDuplicates = function(nums) {
+    let map = new Map();
+    let i = 0;
+    while (i < nums.length) {
+      let idx = nums.indexOf(nums[i])
+      if (!map.has(nums[i])) {
+        map.set(nums[i], true)
+        i++;
+      } else {
+        nums.splice(idx, 1)
+      }
+    }
+    return nums.length;
+  };
