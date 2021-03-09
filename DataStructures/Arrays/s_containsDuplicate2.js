@@ -35,3 +35,22 @@
 // 321,698
 // Submissions
 // 832,343
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {boolean}
+ */
+ var containsNearbyDuplicate = function(nums, k) {
+    let result = {
+        match:false,
+    };
+    
+    for (let i=0;i<nums.length;i++){
+        const num = nums[i]
+        for (let j=i+1;j<nums.length;j++) {
+            if (num === nums[j] && Math.abs(i-j) <= k) result.match = true;
+        }
+    }
+return result.match
+};
