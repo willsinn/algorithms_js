@@ -42,3 +42,23 @@
 // 534,595
 // Submissions
 // 960,052
+
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+ var twoSum = function(numbers, target) {    
+    for (let i=0;i<numbers.length;i++) {
+        const number = numbers[i];
+        
+        for (let j=i+1;j<numbers.length;j++) {
+            const secondNumber = numbers[j];
+            const total = number + secondNumber
+            if (total === target) {
+                return [i+1,j+1]
+            }
+        }
+        
+    }
+};
