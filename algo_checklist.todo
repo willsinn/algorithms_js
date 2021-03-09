@@ -9,7 +9,14 @@ Algoexpert:
         (b) Preorder (Root, Left, Right)
         (c) Postorder (Left, Right, Root)
 ☐ 2. Breadth First Search - Queue - to find shortest path to a target node. @critical 
-    
+    Setting up a BFS, queue:
+        (a) declare a queue with root node as initial value
+        (b) declare while loop that runs while queue.length > 0
+        (c) declare rowSize = queue.length, and row array - we're going to use this for next loop
+        (d) declare secondary while loop which runs until rowSize = 0;
+        (e) declare currentNode var in while loop that shifts from queue
+        (f) push currentNode children into queue, decrease rowSize, push currentNode value into row array 
+        (g) push row into result
 ☐ 3. Matching Parenthesis - Stack @critical 
 ☐ 4. Hash Tables - Fibonacci’s Sequence @critical
 ☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String @critical
