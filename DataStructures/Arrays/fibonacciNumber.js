@@ -40,3 +40,15 @@
 // 322,743
 // Submissions
 // 478,559
+
+var fib = function(N) {
+    const map = {
+        0:0,
+        1:1,
+        2:1
+    }
+    for (let i=3;i<=N;i++) {
+        map[i] = map[i-1] + map[i-2]
+    }
+    return map[N]
+}
