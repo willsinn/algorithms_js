@@ -33,3 +33,31 @@
 // Submissions
 // 848,908
 
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+ var generate = function(numRows) {
+    let rowCount = 1;
+    let result = [];
+    
+    while (rowCount <= numRows) {
+        const prevRow = result[result.length -1];
+        let row = [];
+        for (let i = 0; i < rowCount; i++) {
+            if (rowCount <= 2) row.push(1);
+            if (rowCount > 2) {
+                if (i === 0 || i === rowCount-1) {
+                    row.push(1);
+                } else {
+                    row.push(prevRow[i-1] + prevRow[i])
+                }
+                
+            }
+        }
+        result.push(row);
+        rowCount++;
+    }
+    return result
+    
+};
