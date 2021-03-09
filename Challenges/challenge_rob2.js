@@ -1,13 +1,8 @@
 //
-Shopping cart - has items, each item can have promotions attached.
-Shopping cart has at least 1 item, no max.
+// Shopping cart - has items, each item can have promotions attached.
+// Shopping cart has at least 1 item, no max.
 
-{
-item:'name',
-instock:true,
-promotion:"15%",
-owner:"id",
-}
+
 
 {
     shoppingCart: [
@@ -29,7 +24,7 @@ owner:"id",
     ]
 }
 
-shoppingCart[0].promotions[]
+shoppingCart[0].promotions['promo1']
 
 const order = {
     items: [
