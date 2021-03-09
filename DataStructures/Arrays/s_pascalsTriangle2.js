@@ -40,3 +40,32 @@
 // 358,803
 // Submissions
 // 686,506
+
+
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+ var getRow = function(rowIndex) {
+    let rowCount = 1;
+    let result = [];
+    
+    while (rowCount <= rowIndex+1) {
+        const prevRow = result[result.length -1];
+        let row = [];
+        for (let i = 0; i < rowCount; i++) {
+            if (rowCount <= 2) row.push(1);
+            if (rowCount > 2) {
+                if (i === 0 || i === rowCount-1) {
+                    row.push(1);
+                } else {
+                    row.push(prevRow[i-1] + prevRow[i])
+                }
+                
+            }
+        }
+        result.push(row);
+        rowCount++;
+    }
+    return result[result.length-1]
+};
