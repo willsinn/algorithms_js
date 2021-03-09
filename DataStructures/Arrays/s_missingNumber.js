@@ -46,3 +46,24 @@
 // 629,527
 // Submissions
 // 1,146,731
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var missingNumber = function(nums) {
+    let len = nums.length
+    let result;
+    let match = [];
+    while (len >= 0) {
+        match.push(len);
+        len--;
+    }
+
+    match.forEach(num => {
+        if (!nums.includes(num)) {
+            result = num
+        }
+    })
+    return result
+};
