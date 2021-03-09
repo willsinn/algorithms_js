@@ -22,3 +22,16 @@
 // 1,064,976
 // Submissions
 // 1,817,965
+
+var moveZeroes = function(nums) {
+    let len = nums.length;
+
+    for (let i = 0; i < len; i++) {
+    	if (nums[i] == 0) {
+    		nums.splice(i, 1);
+    		nums.push(0);
+            i--;
+            len--;
+    	}
+    }
+};
