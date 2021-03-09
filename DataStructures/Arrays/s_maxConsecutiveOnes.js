@@ -23,3 +23,18 @@
 // 363,051
 // Submissions
 // 687,289
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var findMaxConsecutiveOnes = function(nums) {
+    let str = nums.join("")
+    str = str.split("0");
+    let result = 0;
+    
+    for (let i=0; i<str.length;i++) {
+        if (result < str[i].length) result = str[i].length
+    }
+    return result
+};
