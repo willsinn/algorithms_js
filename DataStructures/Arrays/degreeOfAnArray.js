@@ -40,14 +40,24 @@
 // 95,428
 // Submissions
 // 176,041
-
-
 /**
  * @param {number[]} nums
  * @return {number}
  */
-const findShortestSubArray = function(nums) {
+ const findShortestSubArray = function(nums) {
     //1. Find the degree of the array which is the maximum frequency of an element.
-    
-    //2. Return the length of the subarray from the first appearance of the element to the last.
+    let numsMap = {}
+    let max = 0;
+    let frequency = 0;
+    for (let i=0; i<nums.length;i++){
+        const num = nums[i];
+        if (numsMap[num]) numsMap[num] += 1;
+        if (!numsMap[num]) numsMap[num] = 1;
+    }
+    let arrs = [];
+    for (const num in numsMap) {
+        if (frequency < num.value) frequency = numsMap[num]
+        
+    }
+    console.log(numsMap)
 };
