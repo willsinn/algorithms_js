@@ -25,3 +25,21 @@
 // 349,725
 // Submissions
 // 623,392
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+ var findDisappearedNumbers = function(nums) {
+    let len = nums.length;
+    let result = []
+    let match = [];
+    while(len > 0) {
+        match.push(len);
+        len--
+    }
+    for (let i=0;i<match.length;i++) {
+        if (!nums.includes(match[i])) result.push(match[i])
+    }
+    return result
+};
