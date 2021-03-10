@@ -32,3 +32,26 @@
 // 808,588
 // Submissions
 // 2,110,840
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ var isPalindrome = function(s) {
+    s = s.replace(/[^0-9a-zA-Z]+/gmi,"");
+    s = s.toLowerCase();
+    let left = 0;
+    let right = s.length -1;
+    
+    while(left < right) {
+         if(s.charAt(left) != s.charAt(right)) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+   
+    return true
+    
+};
+
