@@ -28,3 +28,24 @@
 // 976,810
 // Submissions
 // 1,386,893
+
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+ var reverseString = function(s) {
+    console.log(s)
+    let l = 0;
+    let r = s.length - 1;
+    
+    while (l < r) {
+        const left = s[l];
+        const right = s[r];
+        
+        s.splice(l, 1, right);
+        s.splice(r, 1, left);
+        l++;
+        r--;
+    }
+    
+};
