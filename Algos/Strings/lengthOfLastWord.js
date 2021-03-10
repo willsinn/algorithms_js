@@ -32,3 +32,23 @@
 // 480,541
 // Submissions
 // 1,435,055
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var lengthOfLastWord = function(s) {
+    if (s === " ") return 0;
+    
+    let count = 0;
+    
+    for (let i = s.length-1; i >= 0; i--) {
+        const l = s[i];
+        if (l !== " ") count++;
+        
+        if (l === " " && count > 0) {
+            break
+        }
+    }
+    return count
+};
