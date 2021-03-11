@@ -18,6 +18,7 @@ Algoexpert:
         (f) push currentNode children into queue, decrease rowSize, push currentNode value into row array 
         (g) push row into result
 ☐ 3. Matching Parenthesis - Stack @critical 
+        (a)
 ☐ 4. Hash Tables - Fibonacci’s Sequence @critical
 ☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String @critical
 ☐ 6. Reversing a Linked List - Use 3 Pointers @critical
