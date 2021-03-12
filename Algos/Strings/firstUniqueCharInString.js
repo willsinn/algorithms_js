@@ -25,3 +25,27 @@
 // 695,895
 // Submissions
 // 1,293,853
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var firstUniqChar = function(s) {
+    let map = {};
+    
+    for (let i = 0; i<s.length; i++) {
+        const letter = s[i];
+        if (map[letter]) {
+            map[letter] = [...map[letter], i]
+        }
+        if (!map[letter]) { map[letter]=[i] }
+    }
+    for (const char in map) {
+        console.log(char, map[char])
+        if (map[char].length === 1) {
+            return map[char][0];
+        }
+    }
+    return -1;
+
+};
