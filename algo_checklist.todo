@@ -18,7 +18,9 @@ Algoexpert:
         (f) push currentNode children into queue, decrease rowSize, push currentNode value into row array 
         (g) push row into result
 ☐ 3. Matching Parenthesis - Stack @critical 
-        (a)
+        (a) declare an object with key : value for each bracket
+        (b) declare stack and loop through provided array
+        (c) if there is a closing bracket, start returning the values in stack for comparison.
 ☐ 4. Hash Tables - Fibonacci’s Sequence @critical
 ☐ 5. How to Manipulate Multiple Pointers - Longest Palindromic Sub-String @critical
 ☐ 6. Reversing a Linked List - Use 3 Pointers @critical
