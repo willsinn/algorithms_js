@@ -42,3 +42,11 @@
 // 89,886
 // Submissions
 // 238,090
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var countSegments = function(s) {
+    return s.split(" ").filter(n => n).length
+};
