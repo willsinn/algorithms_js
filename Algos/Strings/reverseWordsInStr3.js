@@ -33,3 +33,24 @@
 // 249,044
 // Submissions
 // 345,087
+
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+ const reverseWords = function(s) {
+    const words = s.split(" ");
+    let result = [];
+
+    for (let i=0;i< words.length; i++) {
+        const word = words[i];
+        let reversedWord = "";
+        for (let j = word.length-1; j >= 0; j-- ) {
+            const letter = word[j];
+            reversedWord = reversedWord + letter;
+        }
+        result.push(reversedWord)
+    }
+    return result.join(" ")
+};
