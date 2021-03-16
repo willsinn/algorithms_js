@@ -44,3 +44,21 @@
 // 274,997
 // Submissions
 // 372,034
+/**
+ * @param {string} moves
+ * @return {boolean}
+ */
+ var judgeCircle = function(moves) {
+
+    let origin= {x:0, y:0}
+    for (let i=0; i < moves.length; i++) {
+        const move = moves[i];
+        
+        if (move === "R") origin.x++;
+        if (move === "L") origin.x--;
+        if (move === "U") origin.y++;
+        if (move === "D") origin.y--;
+    }
+    if (!origin.x && !origin.y) return true;
+    return false
+};
