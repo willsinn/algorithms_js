@@ -41,3 +41,12 @@
 // 98,368
 // Submissions
 // 177,762
+
+//Notes
+
+/*There are 4 cases to check:
+
+1. the current node is null, return empty string
+2. both left and right nodes are null, return the root value, e.g. "1"
+3. only the right node is null, return root value and left value, e.g. "1(2)"
+4. both left and right nodes are not null, return both left and right values, e.g. "1(2)(3)"*/
