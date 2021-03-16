@@ -33,3 +33,24 @@
 // 108,788
 // Submissions
 // 220,929
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+ var reverseStr = function(s, k) {
+    const arr = s.split('');
+  const reverse = (arr, i, j) => {
+    while (i < j) [arr[i++], arr[j--]] = [arr[j], arr[i]];
+  }
+    for (let i = 0; i < arr.length; i += 2 * k) {
+      // try to reverse as much as we can within k characters
+      reverse(arr, i, Math.min(i + k - 1, arr.length - 1));
+    }
+  
+    return arr.join('');
+  
+  
+  
+  };
