@@ -50,3 +50,33 @@
 2. both left and right nodes are null, return the root value, e.g. "1"
 3. only the right node is null, return root value and left value, e.g. "1(2)"
 4. both left and right nodes are not null, return both left and right values, e.g. "1(2)(3)"*/
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} t
+ * @return {string}
+ */
+ var tree2str = function(t) {
+    let result = `${t.val}`;
+    
+    dfs(t)
+    function dfs(node) {
+        if (!node) return;
+        
+        if (!node.right && !node.left) return;
+        console.log(node.val)
+        result += `${node.val}`;
+        dfs(node.left)
+        dfs(node.right)
+        
+        
+    }
+    console.log(t)
+};
