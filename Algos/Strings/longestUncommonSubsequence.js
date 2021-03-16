@@ -44,3 +44,12 @@
 // 68,470
 // Submissions
 // 116,463
+
+/**
+ * @param {string} a
+ * @param {string} b
+ * @return {number}
+ */
+ var findLUSlength = function(a, b) {
+    
+};
