@@ -41,3 +41,26 @@
 // 105,380
 // Submissions
 // 228,992
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ const checkRecord = function(s) {
+    let maxAbsent = 2;
+    let lates = [];
+    
+    for (let i = 0; i <= s.length; i++) {
+        if (lates.length === 3 || maxAbsent === 0)
+            return false;
+        
+        const letter = s[i];
+        if (letter === "A") {
+            maxAbsent--;
+            lates = [];
+        }
+        if (letter === "P") lates = [];
+        if (letter === "L") lates.push(i);
+    }
+    return true
+};
