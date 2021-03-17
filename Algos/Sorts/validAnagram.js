@@ -34,3 +34,17 @@
 // 776,330
 // Submissions
 // 1,322,689
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isAnagram = function(s, t) {
+    let sArray = s.split("")
+    let tArray = t.split("")
+    
+    sArray.sort( (a, b) => a.localeCompare(b))
+    tArray.sort( (a, b) => a.localeCompare(b))
+    if (sArray.join(",") === tArray.join(",")) return true;
+    return false
+};
