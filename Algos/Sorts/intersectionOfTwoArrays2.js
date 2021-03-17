@@ -38,3 +38,36 @@
 // 474,062
 // Submissions
 // 912,023
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+ var intersect = function(nums1, nums2) {
+    let map = {};
+  let result = [];
+  for (let i=0; i<nums1.length;i++) {
+      const num1 = nums1[i];
+      if (!map[num1]) {
+          map[num1] = 1
+      } else {
+          map[num1] = map[num1]+1;
+      }
+  }
+for (let i=0; i<nums2.length;i++) {
+      const num2 = nums2[i];
+      const repeats = result.filter(n => n === num2);
+      if (result.includes(num2) && repeats.length < map[num2]) {
+          result.push(num2)
+              
+          }
+      if (map[num2]&& !result.includes(num2)) {
+          result.push(num2)
+      }
+          
+  }
+console.log(map)
+  
+return result
+};
