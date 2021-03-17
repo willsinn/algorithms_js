@@ -31,3 +31,27 @@
 // 457,052
 // Submissions
 // 703,561
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+ var intersection = function(nums1, nums2) {
+    let map = {};
+    let result = [];
+    for (let i=0; i<nums1.length;i++) {
+        const num1 = nums1[i];
+        if (!map[num1]) {
+            map[num1] = true
+        }
+    }
+ for (let i=0; i<nums2.length;i++) {
+        const num2 = nums2[i];
+        if (map[num2]&&!result.includes(num2)) {
+            result.push(num2)
+        }
+    }
+return result
+
+};
