@@ -41,3 +41,27 @@
 // 608,162
 // Submissions
 // 1,185,212
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var isHappy = function(n) {
+    let map = new Map();
+    map.set(0, `${n}`)
+    let prev;
+    while(map.get(0) !== "1") {
+        if (prev === map.get(0)) return false
+                    prev = map.get(0)
+        if (map.get(0) === 1) return true
+
+        const numsSquared = map.get(0).split("");
+        
+        let total = 0;
+        for (let i=0; i<numsSquared.length;i++) {
+            total += parseInt(numsSquared);
+        }
+        map.set(0, `${total}`)
+    }
+    return false
+};
