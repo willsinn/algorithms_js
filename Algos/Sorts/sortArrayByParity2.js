@@ -37,3 +37,27 @@
 // 121,066
 // Submissions
 // 171,381
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+ var sortArrayByParityII = function(nums) {
+    let result =[];
+    let evens = [];
+    let odds = [];
+    let counter = 0;
+    for (let i=0; i<nums.length; i++) {
+        const num = nums[i];
+        if (num%2 === 0) {
+            evens.push(num)
+        } else {
+            odds.push(num)
+        }
+    }
+    while (counter < evens.length || counter < odds.length) {
+        result.push(evens[counter])
+        result.push(odds[counter])
+        counter++
+    }
+    return result
+};
