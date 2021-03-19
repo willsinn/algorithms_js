@@ -42,3 +42,28 @@
 // 2,074,710
 // Submissions
 // 6,591,137
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var lengthOfLongestSubstring = function(s) {
+    let longest= 0;
+    let str = '';
+    for (let i= 0; i<s.length;i++) {
+        if (!str) {
+            str = s[i];
+        } else if (str && str.includes(s[i])) {
+            str.splice(1,1)
+            str += s[i]
+        }else {
+            str += s[i];
+        }
+                    if (longest < str.length) longest = str.length;
+
+        
+    }
+    console.log(str)
+    if (str.length > longest) return str.length;
+    return longest
+};
