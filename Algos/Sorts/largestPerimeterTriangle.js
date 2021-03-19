@@ -32,12 +32,7 @@
 
 // Constraints:
 
-// 3 <= nums.length <= 104
-// 1 <= nums[i] <= 106
-// Accepted
-// 42,427
-// Submissions
-// 72,402
+
 
 var largestPerimeter = function(A) {
     A.sort((a, b) => a - b);
