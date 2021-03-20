@@ -51,3 +51,38 @@
 // 127,606
 // Submissions
 // 161,278
+
+/**
+ * @param {string} S
+ * @return {string}
+ */
+ var removeOuterParentheses = function(S) {
+    let prim = "";
+    let prims = [];
+    let res = "";
+    let numOpenParentheses = 0;
+    
+    for (let i=0; i<S.length; i++) {
+        const char = S[i];
+        if (prim === "" && char === "(") {
+            prim += char
+            numOpenParentheses++;
+        } else if (char === "(") {
+            prim += char;
+            numOpenParentheses++;
+        } else if (char === ")") {
+            prim += char;
+            numOpenParentheses--;
+        }
+        
+        if (numOpenParentheses === 0) {
+            prims.push(prim);
+            prim = "";
+        }
+    }
+    for (let p = 0; p < prims.length; p++) {
+        const primDecomp = prims[p].slice(1, prims[p].length-1);
+        res+=primDecomp
+    }
+    return res
+};
