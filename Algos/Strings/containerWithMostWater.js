@@ -43,3 +43,11 @@
 // 894,825
 // Submissions
 // 1,693,485
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+ var maxArea = function(height) {
+    
+};
