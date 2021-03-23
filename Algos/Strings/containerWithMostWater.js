@@ -49,6 +49,6 @@
  * @return {number}
  */
  var maxArea = function(height) {
-        //
+    //pointer question
 
 };
