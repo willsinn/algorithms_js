@@ -50,5 +50,21 @@
  */
  var maxArea = function(height) {
     //pointer question
-
+    
+    let x, y;
+    let maxArea = 0;
+    for (let i=0; i < height.length; i++) {
+        const start = height[i];
+        
+        for (let j=i+1; j<height.length; j++) {
+            const end = height[j];
+            
+            x = (j - i);
+            y = (end > start ? start:end)
+            
+            const area = x*y;
+            if (area > maxArea) maxArea = area;
+        }
+    }
+    return maxArea;
 };
