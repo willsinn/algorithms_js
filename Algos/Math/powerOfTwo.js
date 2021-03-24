@@ -48,3 +48,18 @@
 // 405,318
 // Submissions
 // 925,092
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var isPowerOfTwo = function(n) {
+    let i = 0;
+    let num=0; 
+    while (num < n) {
+        num = Math.pow(2, i);
+        if (num === n) return true;
+        i++
+    }
+    return false   
+};
