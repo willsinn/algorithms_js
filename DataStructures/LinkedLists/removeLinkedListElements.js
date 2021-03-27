@@ -36,3 +36,7 @@
 // 448,819
 // Submissions
 // 1,140,355
+
+const removeLinkedListElements = () => {
+    
+}
