@@ -37,3 +37,21 @@
 // 152,605
 // Submissions
 // 486,350
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+ var minCut = function(s) {
+    let prev;
+    let res = 0;
+    
+    for (let i=0;i<s.length;i++) {
+        let current = s[i];
+        if (prev && prev !== current) res++;
+        console.log(current, prev)
+
+        prev = current
+    }
+    return res;
+};
