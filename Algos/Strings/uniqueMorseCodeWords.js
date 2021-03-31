@@ -37,3 +37,36 @@
 // 181,290
 // Submissions
 // 229,422
+
+/**
+ * @param {string[]} words
+ * @return {number}
+ */
+ var uniqueMorseRepresentations = function(words) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    const morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+    let map = {};
+    for (let i=0;i<morse.length;i++) {
+        map[alphabet[i]] = morse[i];
+    }
+    
+    let wordsMorse = [];
+    for (let i=0;i<words.length;i++) {
+        const word = words[i];
+        let wordMorse = "";
+        for (let j=0;j<word.length;j++) {
+            const letter = word[j];
+            const letterMorse = map[letter];
+            wordMorse += letterMorse;
+        }
+        wordsMorse.push(wordMorse);
+    }
+    let result = [];
+    
+    for (let i=0;i<wordsMorse.length;i++) {
+        const w = wordsMorse[i];
+        if (!result.includes(w)) result.push(w);
+    }
+    return result.length;
+
+};
