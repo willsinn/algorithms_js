@@ -5,9 +5,10 @@ Algoexpert:
         (b) set up base case, for tree/graphs it is checking if the node is null.
         (c) call the helper function for both right/left nodes 
     Depth First Traversals:
-        (a) Inorder (Left, Root, Right) 
-        (b) Preorder (Root, Left, Right)
-        (c) Postorder (Left, Right, Root)
+        (a) Inorder (Left, Root, Right) - Left to right
+        (b) Preorder (Root, Left, Right) - Root first, left -> right
+        (c) Postorder (Left, Right, Root) - Root last
+
 ☐ 2. Breadth First Search - Queue - to find shortest path to a target node. @critical 
     Setting up a BFS, queue:
         (a) declare a queue with root node as initial value

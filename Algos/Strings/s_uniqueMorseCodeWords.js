@@ -38,6 +38,8 @@
 // Submissions
 // 229,422
 
+
+
 /**
  * @param {string[]} words
  * @return {number}
@@ -62,6 +64,7 @@
         wordsMorse.push(wordMorse);
     }
     let result = [];
+    
     
     for (let i=0;i<wordsMorse.length;i++) {
         const w = wordsMorse[i];
