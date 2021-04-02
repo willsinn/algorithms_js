@@ -56,8 +56,6 @@
     }
     let arrs = [];
     for (const num in numsMap) {
-        if (frequency < num.value) frequency = numsMap[num]
-        
+        if (frequency < num.value) frequency = numsMap[num]     
     }
-    console.log(numsMap)
 };
