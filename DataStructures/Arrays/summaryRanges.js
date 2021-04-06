@@ -59,3 +59,28 @@
 // 210,178
 // Submissions
 // 492,512
+
+/**
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+ var summaryRanges = function(nums) {
+    if (!nums.length) return [];
+    if (nums.length === 1) return `${nums[0]}`;
+    let res = [];
+    let range = "";
+    let prev = null;
+    for (let i=0;i<nums.length;i++) {
+        const num = nums[i];
+        if (prev !== null && prev+1 !== num) {
+            range += `${prev}`;
+            res.push(range);
+            
+        }
+        if (range === "") {
+            range += `${num}->`;
+        }
+        
+    }
+    return res
+};
