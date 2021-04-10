@@ -114,6 +114,6 @@ function isMirror(p, q) {
     }
 
     return true;
-    
-}
+
+    }
 }
