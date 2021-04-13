@@ -43,3 +43,31 @@
 // 806,877
 // Submissions
 // 1,371,871
+
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+ var maxProfit = function(prices) {
+    let prev = null;
+    let pp = 0;
+    let total = 0;
+    
+    for (let i=0; i<prices.length; i++) {
+        const current = prices[i];
+        if (prev === null) {
+            prev = current;
+        } else {
+            const profit = current - prev;
+            if (prev > current) prev = current;
+            if (pp < profit) {
+                total += profit;
+                pp = 0;
+                prev = current;
+            }
+        }
+    }
+    
+    return total;
+};
