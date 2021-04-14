@@ -48,25 +48,21 @@
 // 2,798,462
 
 /**
- * @param {number[]} digits
- * @return {number[]}
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
  */
- var plusOne = function(digits) {
-    // let number = '';
-    // for (let i=0;i<digits.length;i++) {
-    //     const digit = digits[i];
-    //     number=`${number}${digit}`;
-    // }
-    // let ans = parseInt(number)
-    // ans = `${ans+=1}`;
-    // const result = ans.split('')
-    // return result
-    let co = true;
-  for (let i = digits.length - 1; i >= 0 && co; i--) {
-    digits[i]++;
-    co = digits[i] >= 10;
-    co && (digits[i] = 0);
+ var findMaxAverage = function(nums, k) {
+  let max = -10001;
+  const numOfSubarrays = nums.length - k + 1;
+  
+  for (let i=0;i<numOfSubarrays;i++) {
+      const subA = nums.slice(i,k+i);
+      const sum = subA.reduce(function(accumulator, currentValue, currentIndex, array) {
+           return accumulator + currentValue
+      })
+      const avg = sum/k;
+      if (avg > max) max = avg;
   }
-  co && digits.unshift(1);
-  return digits;
+  return max
 };
