@@ -64,23 +64,13 @@
  * @param {number[]} nums
  * @return {string[]}
  */
- var summaryRanges = function(nums) {
-    if (!nums.length) return [];
-    if (nums.length === 1) return `${nums[0]}`;
-    let res = [];
-    let range = "";
-    let prev = null;
-    for (let i=0;i<nums.length;i++) {
-        const num = nums[i];
-        if (prev !== null && prev+1 !== num) {
-            range += `${prev}`;
-            res.push(range);
-            
-        }
-        if (range === "") {
-            range += `${num}->`;
-        }
-        
+ const summaryRanges = (nums)=> {
+    var res = [];
+    for (var i = 0, left = nums[0]; i < nums.length; i++) {
+      if (nums[i] + 1 !== nums[i + 1]) {
+        res.push(left === nums[i] ? '' + nums[i] : left + '->' + nums[i]);
+        left = nums[i + 1];
+      }
     }
-    return res
-};
+    return res;
+  }
