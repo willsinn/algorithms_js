@@ -70,3 +70,23 @@
     }
     return true
 };
+
+
+//working solu
+var isLongPressedName = function(name, typed) {
+    let i = 0, j = 0;
+    while(i < name.length && j < typed.length) {
+        let lastSame = name.charAt(i), count = 1;
+        i++;
+        while(i < name.length && name.charAt(i) ==  lastSame){
+            count++;
+            i++;
+        }
+        while(j < typed.length && typed.charAt(j) == lastSame) {
+            count--;
+            j++;
+        }
+        if(count > 0) return false;
+    }
+    return i == name.length;
+};
