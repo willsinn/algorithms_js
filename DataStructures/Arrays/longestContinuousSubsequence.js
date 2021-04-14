@@ -37,3 +37,19 @@
 // 144,240
 // Submissions
 // 313,549
+
+var findLengthOfLCIS = function(nums) {
+    if(nums.length ==0){
+        return 0;
+    }
+    var count = 1,max=1;
+    for(let i = 0;i<nums.length;i++){
+        if(nums[i]<nums[i+1]){
+           count++;
+           max=Math.max(count,max)
+        }else{
+           count =1
+        }
+    }
+    return max
+};
