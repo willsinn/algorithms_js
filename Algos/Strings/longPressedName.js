@@ -44,3 +44,29 @@
 // 63,768
 // Submissions
 // 170,904
+
+/**
+ * @param {string} name
+ * @param {string} typed
+ * @return {boolean}
+ */
+ var isLongPressedName = function(name, typed) {
+    let map = {};
+    
+    for (let i=0;i<name.length;i++) {
+        const letter = name[i];
+        if (!map[letter]) {
+            map[letter] = 1;
+        } else {
+            map[letter]+=1;
+        }
+        
+    }
+    const a = typed.split("");
+    for (const letter in map) {
+        const typedLetters = a.filter(l => l ===letter);
+        console.log(typedLetters, map)
+        if (typedLetters.length < map[letter]) return false
+    }
+    return true
+};
