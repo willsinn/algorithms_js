@@ -37,3 +37,27 @@
 // 462,949
 // Submissions
 // 726,733
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+ var fizzBuzz = function(n) {
+    let result = []
+    
+    let count = 1;
+    
+    while (count <= n) {
+        if (count > 4 && count % 3 === 0 && count % 5 === 0) {
+            result.push("FizzBuzz")
+        } else if (count % 3 == 0 && count > 2){
+            result.push("Fizz")
+        } else if (count % 5 == 0 && count > 4 ){
+            result.push("Buzz")
+        } else {
+            result.push(`${count}`)
+        }
+        count++;
+    }
+    return result
+};
