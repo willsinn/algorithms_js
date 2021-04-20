@@ -34,3 +34,23 @@
 // 210,864
 // Submissions
 // 323,478
+
+/**
+ * @param {number} num
+ * @return {number}
+ */
+ var findComplement = function(num) {
+    
+    const numBit = parseInt(num).toString(2)
+     
+     let newBit = ""
+ 
+    for (let i=0; i<numBit.length;i++) {
+        const bit = numBit[i];
+        if (bit == 0) newBit += "1";
+         if (bit == 1) newBit += "0";
+    }
+     
+     const newNum = parseInt(newBit, 2)
+     return newNum
+ };
