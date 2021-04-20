@@ -35,3 +35,14 @@
 // 90,943
 // Submissions
 // 178,304
+
+var minMoves = function(nums) {
+    var min = nums[0];
+    var sum = min;
+    var len = nums.length;
+    for(let i = 1; i < len; i++){
+        sum += nums[i];
+        min = nums[i] < min? nums[i]: min;
+    }
+    return sum - len * min;
+};
