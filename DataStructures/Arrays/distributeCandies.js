@@ -43,3 +43,18 @@
 // 165,224
 // Submissions
 // 256,607
+
+var distributeCandies = function(candies) {
+    let result = 0, visited = new Set();
+    
+    for(let v of candies) {
+        if(visited.has(v)) {
+            continue;
+        }
+        result++;
+        visited.add(v);
+    }
+    
+    return Math.min(result, candies.length/2);
+    
+};
