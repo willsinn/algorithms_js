@@ -36,3 +36,23 @@
 // 291,339
 // Submissions
 // 587,355
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+ var isSubsequence = function(s, t) {
+    if (s.length === 0) return true
+    let str = s;
+    
+    for (let i=0; i<t.length;i++) {
+        const letter = t[i];
+        if (letter === str[0]) {
+            if (str.length === 1) return true
+            const leftOver = str.slice(1);
+            str = leftOver
+        }
+    }
+    return false
+};
