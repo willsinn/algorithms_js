@@ -38,3 +38,23 @@
 // 199,235
 // Submissions
 // 381,070
+
+var longestPalindrome = function(s) {
+    const cache = {};
+    let length = 0;
+    for(let ch of s) {
+        if(cache[ch]) {
+            delete cache[ch];
+            length += 2;
+        }else {
+            cache[ch] = 1;
+        }
+    }
+
+    let hasOdd = false;
+    for(let i in cache) {
+        hasOdd = true;
+        break;
+    }
+    return length + (hasOdd ? 1 : 0);
+};
