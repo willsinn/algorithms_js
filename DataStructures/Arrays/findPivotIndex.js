@@ -50,3 +50,32 @@
 // 194,745
 // Submissions
 // 420,062
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var pivotIndex = function(nums) {
+    let index = 0;
+    
+    while (index < nums.length) {
+        let leftSum, rightSum;
+        
+        if (index===0) leftSum = 0;
+        if (index === nums.length-1) rightSum = 0;
+        if (1 <= index) {
+            const lSubArray = nums.slice(0, index);
+            leftSum = lSubArray.reduce(( accumulator, currentValue ) => accumulator + currentValue,0)
+
+        }
+            
+          if  (index < nums.length-1 ) {
+            const rSubArray = nums.slice(index+1, nums.length);
+            rightSum = rSubArray.reduce(( accumulator, currentValue ) => accumulator + currentValue,0)
+
+        }
+        if (leftSum === rightSum) return index;
+        index++
+    }
+    return -1
+};
