@@ -41,7 +41,7 @@
  */
  var findComplement = function(num) {
     
-    const numBit = parseInt(num).toString(2)
+const numBit = parseInt(num).toString(2)
      
      let newBit = ""
  
