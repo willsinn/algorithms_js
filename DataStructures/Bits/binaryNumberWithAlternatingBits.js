@@ -45,3 +45,21 @@
 // 74,762
 // Submissions
 // 124,499
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var hasAlternatingBits = function(n) {
+    const binN = parseInt(n).toString(2);
+    
+    let prev = binN[0];
+    for (let i=1;i<binN.length;i++) {
+        const curr = binN[i];
+        
+        if (prev === curr) return false;
+        
+        prev = curr
+    }
+    return true
+};
