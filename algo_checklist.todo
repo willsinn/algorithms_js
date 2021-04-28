@@ -59,4 +59,9 @@ Things to know:
     - Iterating over an object can be done with:
         for(const [key, value] of Object.entries(obj))
         for(const key in Obj)
-    - 
+    - Sets, similar to arrays but faster with removing elements.
+        - How to initialize, check values against the set and update the set.
+            let set = new Set();
+            set.has(value) = true || false; // returns boolean value based on if the value is present
+            set.add(value) // add value to set
+            set.delete(value) // remove value from set
