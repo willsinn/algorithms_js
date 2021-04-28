@@ -34,3 +34,32 @@
 // 129,159
 // Submissions
 // 315,324
+
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+ var findErrorNums = function(nums) {
+    let result= [];
+    
+    for (let i=0; i<nums.length;i++) {
+        const pointer1 = nums[i];
+        for(let j=i+1; j<nums.length;j++) {
+            const pointer2 = nums[j];
+            if (pointer1 === pointer2) {
+                result.push(pointer1);
+                break;
+            }
+        }
+    }
+    for (let i=0; i<nums.length;i++) { 
+        const counter = i+1;
+        if (!nums.includes(counter)) {
+            
+            result.push(counter);
+            break;
+        }
+    }
+    return result
+};
