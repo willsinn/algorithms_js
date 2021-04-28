@@ -46,16 +46,36 @@
  */
  const findShortestSubArray = function(nums) {
     //1. Find the degree of the array which is the maximum frequency of an element.
-    let numsMap = {}
-    let max = 0;
-    let frequency = 0;
+    let numsMap = {};
+
     for (let i=0; i<nums.length;i++){
         const num = nums[i];
-        if (numsMap[num]) numsMap[num] += 1;
-        if (!numsMap[num]) numsMap[num] = 1;
+        if (numsMap[num]) {
+            numsMap[num].freq += 1;
+            numsMap[num].endIdx = i;
+        }
+        if (!numsMap[num]) {
+            numsMap[num] = { freq:1, startIdx:i, endIdx:i};
+        }       
     }
-    let arrs = [];
-    for (const num in numsMap) {
-        if (frequency < num.value) frequency = numsMap[num]     
+    let array=[];
+    let freq = 0;
+    for (let num in numsMap){
+        const numFreq = numsMap[num].freq
+        if (freq === numFreq) {
+            array.push(num)
+        }
+        if (freq < numFreq) {
+            array = [num];
+            freq = numFreq;
+        }
     }
+    let shortest = nums.length;
+    
+    for (let i=0;i < array.length;i++) {
+        const num = numsMap[array[i]];
+        const subLength = num.endIdx - num.startIdx + 1;
+        if (shortest > subLength) shortest = subLength;
+    }
+    return shortest;
 };
