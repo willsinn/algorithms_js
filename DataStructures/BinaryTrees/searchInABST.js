@@ -60,3 +60,35 @@
     }
     return null
 };
+
+
+// -------  SOLUTION 2 - BFS with BST conditional -------
+
+
+ var searchBST = function(root, val) {
+    let queue = [root];
+    if (root.val > val) {
+        queue = [root.left];
+    }
+        if (root.val < val) {
+        queue = [root.right];
+    }
+    
+    while(queue.length > 0) {
+        const size = queue.length;
+        
+        for (let i=0;i< size;i++) {
+            const node = queue.shift();
+            const value = node.val;
+
+            if (value === val) return node;
+            if (node.left) queue.push(node.left)
+            if (node.right) queue.push(node.right)
+            
+        }
+    }
+    return null
+};
+
+
+// ----------- SOLUTION 3 - DFS ----------------------
