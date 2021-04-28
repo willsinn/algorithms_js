@@ -36,3 +36,27 @@
 // 273,650
 // Submissions
 // 372,441
+
+
+// --------- SOLUTION 1 - BFS ----------------
+
+
+ var searchBST = function(root, val) {
+    
+    let queue = [root];
+    
+    while(queue.length > 0) {
+        const size = queue.length;
+        
+        for (let i=0;i< size;i++) {
+            const node = queue.shift();
+            const value = node.val;
+
+            if (value === val) return node;
+            if (node.left) queue.push(node.left)
+            if (node.right) queue.push(node.right)
+            
+        }
+    }
+    return null
+};
