@@ -42,3 +42,24 @@
 // 114,987
 // Submissions
 // 265,695
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var dominantIndex = function(nums) {
+    const oldArr = [...nums];
+    const sorted = nums.sort((a, b) => a - b);
+    const largest = sorted[sorted.length-1];
+    for (let i=0;i< sorted.length-1;i++) {
+        const num = sorted[i];   
+        if (largest/2 < num) {
+            return -1
+        }
+    }
+    for (let i=0;i< oldArr.length;i++) {
+        const num = oldArr[i];
+        if (num === largest) return i
+    }
+};
