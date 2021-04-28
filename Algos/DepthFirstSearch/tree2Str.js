@@ -41,3 +41,37 @@
 // 102,299
 // Submissions
 // 183,187
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} t
+ * @return {string}
+ */
+ var tree2str = function(t) {
+    
+    const str = dfs(t);
+    function dfs(node) {
+        if (!node) return "";
+        
+        const val = node.val
+        const left = dfs(node.left)
+        const right = dfs(node.right)
+        
+        if (!node.right && !node.left) return `${val}`;
+        
+        if (!node.right) return `${val}(${left})`;
+        
+        return `${val}(${left})(${right})`
+
+        
+        
+    }
+    return str
+};
