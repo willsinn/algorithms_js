@@ -38,3 +38,27 @@
 // 106,346
 // Submissions
 // 151,660
+
+let shortestToChar = function(S, C) {
+    let pos=[];
+    let ans=[];
+    let max=Number.MAX_VALUE;
+
+    for(let i=0;i<S.length;i++){
+        if(S.charAt(i)===C){
+            pos.push(i);
+        }
+    }
+
+    for(let i=0;i<S.length;i++){
+        for(let j=0;j<pos.length;j++){
+            let diff= Math.abs(pos[j]-i);
+            if(diff<=max){
+                max=Math.min(diff,max);
+            }
+        }
+        ans.push(max);
+        max=Number.MAX_VALUE;
+    }
+    return ans;
+};
