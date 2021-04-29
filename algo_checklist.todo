@@ -65,3 +65,26 @@ Things to know:
             set.has(value) = true || false; // returns boolean value based on if the value is present
             set.add(value) // add value to set
             set.delete(value) // remove value from set
+    - How to remove a node from a singly Linked List: iterate the list and use two pointers to reassign the previous node to the next node.
+            const removeLinkedListNode =  (head, val) => {
+                    let pointer = head;
+                    let prev = null;
+        
+                    while (pointer) {
+                        if(pointer.val === val){
+                            if(pointer === head){ 
+                                head = head.next;
+                                pointer = head;
+                            } else if (prev) {
+                                prev.next = pointer.next; 
+                                pointer = pointer.next;
+                            } 
+                        } else {
+                            prev = pointer;
+                            if(pointer){
+                                pointer = pointer.next;   
+                            }
+                        }
+                    }
+                    return head;
+            };
