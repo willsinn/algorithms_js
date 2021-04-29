@@ -26,3 +26,26 @@
 // 97,934
 // Submissions
 // 199,552
+
+/**
+ * @param {string} A
+ * @param {string} B
+ * @return {boolean}
+ */
+ var rotateString = function(A, B) {
+    if (A === B) return true;
+    if (A.length !== B.length) return false;
+    
+    
+    let maxRotations = A.length;
+    let rotateA = A;
+    
+    while (maxRotations > 0) {
+        if (rotateA === B) return true;
+        let str = rotateA.slice(1);
+        str+=rotateA[0];
+        rotateA = str
+        maxRotations--;
+    }
+    return false
+};
