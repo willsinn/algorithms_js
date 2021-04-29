@@ -52,3 +52,28 @@
 // 46,979
 // Submissions
 // 76,982
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var binaryGap = function(n) {
+    const bin = n.toString(2)
+    let maxGap = 0;
+    
+    for (let i=0; i<bin.length;i++) {
+        const elem = bin[i];
+        if (bin[i]==1) {
+            
+            for (let j=i+1;j<bin.length;j++) {
+                const pointer = bin[j];
+                if (pointer == 1) {
+                    const gap = j - i;
+                    if (maxGap < gap) maxGap = gap
+                    break
+                } 
+            }
+        }
+    }
+    return maxGap
+};
