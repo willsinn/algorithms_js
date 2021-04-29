@@ -40,3 +40,26 @@
 // 1,381,530
 // Submissions
 // 2,095,678
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+ var reverseList = function(head) {
+    let prev = null, next = null;
+    while (head) {
+        next = head.next  //1. Save the next item in list 
+        head.next = prev; //2. Initializes new list node by copying prev(creates null node for end of list)
+        prev = head;    //3. Assign new value to head of prev
+        head = next;        //4. Assign new value to head of head
+        console.log(prev)
+    }
+    return prev;
+};
