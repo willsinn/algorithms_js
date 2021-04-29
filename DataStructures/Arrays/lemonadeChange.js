@@ -56,3 +56,47 @@
 // 71,405
 // Submissions
 // 137,596
+
+/**
+ * @param {number[]} bills
+ * @return {boolean}
+ */
+ var lemonadeChange = function(bills) {
+    const cashRegister = {
+        "5":0,
+        "10":0,
+        "20":0
+    }
+    
+    for (let i=0;i<bills.length;i++) {
+        const bill = bills[i];
+        const fives = cashRegister["5"];
+        const tens = cashRegister["10"];
+        
+        
+        if (bill == 5) cashRegister["5"]+=1;
+        if (bill == 10) {
+            if (fives > 0) {
+                cashRegister["10"]+=1;
+                cashRegister["5"]-=1
+            } else {
+                return false;
+            }
+        }
+        if (bill == 20) {
+            if (tens > 0 && fives > 0) {
+                cashRegister["20"]+=1
+                cashRegister["10"]-=1;
+                cashRegister["5"]-=1
+                
+            } else if (tens === 0 && fives > 3) {
+                cashRegister["20"]+=1
+                cashRegister["5"]-=3
+            } else {
+                return false
+            }
+            
+        }
+    }
+    return true
+};
