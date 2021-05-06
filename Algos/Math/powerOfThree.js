@@ -42,3 +42,11 @@
 // 349,111
 // Submissions
 // 822,316
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var isPowerOfThree = function(n) {
+    return n > 0 && Math.pow(3,33) % n === 0
+};
