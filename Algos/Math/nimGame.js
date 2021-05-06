@@ -44,3 +44,12 @@
 // 244,848
 // Submissions
 // 444,137
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var canWinNim = function(n) {
+    return n % 4 > 0
+};
+
