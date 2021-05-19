@@ -64,3 +64,18 @@
     const res = uniqueElems.filter(v => v[1] === target);
     return parseInt(res[0])
 };
+
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var repeatedNTimes = function(nums) {
+    let nml = nums.length;
+    let obj = {};
+    for(let i=0; i<nml; i++){
+        if(obj[nums[i]] === null) return nums[i];
+        obj[nums[i]] = null;
+    }
+};
