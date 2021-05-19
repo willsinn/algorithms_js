@@ -51,3 +51,45 @@
 // 66,123
 // Submissions
 // 195,596
+
+/**
+ * @param {number[]} deck
+ * @return {boolean}
+ */
+ var hasGroupsSizeX = function(deck) {
+    var map = {}; // grab the number of times each value occurs in deck
+    for (var i= 0 ; i< deck.length;i++){
+	// if values hasnt been added to map yet 
+        if (typeof map[deck[i]] == 'undefined'){
+            map[deck[i]] = 1;
+        }else{
+	// increment count of that value in map by one
+            map[deck[i]]+=1;
+        }
+    }
+// find our value with the minimum number of occurances
+    var min = map[deck[0]];
+    for (var k in map){
+        if (map[k]<=min){
+            min = map[k];
+        }
+    }
+     var flag;
+    for (var i = 2; i<=min;i++){
+	// determines whether each number of occurances can be grouped into sizes of i
+        flag= true;
+        for (var k in map){
+	// number of occurances of value k cant be grouped into sizes of i
+            if (map[k]%i!=0){
+                flag = false;
+                break;
+            }
+        }
+	// all occurance numbers where able to be grouped with equal sizes
+        if (flag==true){
+            return true;
+        }
+    }
+// no grouping is possible
+    return false; 
+};
