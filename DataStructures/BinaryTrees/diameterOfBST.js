@@ -36,3 +36,35 @@
 // 478,289
 // Submissions
 // 958,003
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ const diameterOfBinaryTree = function(root) {
+    if (!root.left && root.right) return 0;
+    let length = 0;
+    dfs(root, length);
+    
+    function dfs(node, len) {
+        if (!node) return;
+        
+        if (!node.left && !node.right) {
+            return len;
+        }
+        console.log(len)
+
+        dfs(node.left, length+1);
+        dfs(node.right, length+1);
+    }
+    console.log(length)
+    
+};
