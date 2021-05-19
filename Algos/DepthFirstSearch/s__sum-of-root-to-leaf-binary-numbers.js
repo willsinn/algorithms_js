@@ -80,3 +80,11 @@
     }
     return result
 };
+
+
+
+const sumRootToLeaf = ({ val, left, right }, acc = '') =>
+  !left && !right
+    ? parseInt(acc + val, 2)
+    : (left ? sumRootToLeaf(left, acc + val) : 0) +
+      (right ? sumRootToLeaf(right, acc + val) : 0);
