@@ -42,3 +42,12 @@
 // 106,419
 // Submissions
 // 161,017
+
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+ var divisorGame = function(n) {
+    return n % 2 === 0
+};
