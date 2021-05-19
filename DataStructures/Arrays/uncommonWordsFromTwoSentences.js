@@ -43,3 +43,31 @@
 // 74,899
 // Submissions
 // 116,436
+
+
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {string[]}
+ */
+ var uncommonFromSentences = function(s1, s2) {
+    const a1 = s1.split(" ")
+    const a2 = s2.split(" ")
+    let map = {};
+    
+    let queue = [a1, a2]
+    while (queue.length > 0) {
+        const first = queue.shift();
+            for (let i=0;i<first.length; i++) {
+                const word = first[i];
+                
+                if (!map[word]) {
+                    map[word] = 1;
+                } else {
+                    map[word] += 1;
+                }
+            }
+    }
+    const uncommonWords = Object.entries(map).filter(v => v[1] === 1).map(v => v[0]);
+    return uncommonWords    
+};
