@@ -51,3 +51,65 @@
 // 41,846
 // Submissions
 // 61,802
+
+
+
+var numRookCaptures = function(board) {
+    let rook;
+    const bishops = [];
+    const pawns = []
+    for (let i=0;i<board.length;i++) {
+        const width = board[i];
+        
+        for (let j=0;j<width.length;j++) {
+            const boardTile = width[j];
+            
+            if (boardTile === "R") {
+                rook = [i, j]
+            }
+            if (boardTile === "B") {
+                bishops.push([i,j])
+            }
+            if (boardTile === "p") {
+                pawns.push([i,j])
+            }
+        }
+    }
+    let captures = 0;
+    
+    for (let i=0;i<pawns.length;i++) {
+        const pawnLength = pawns[i][0];
+        const pawnWidth = pawns[i][1]
+        if (pawnLength === rook[0]) {
+            const inWay = bishops.filter(v => v[0] === pawnLength);
+            const minVal = rook[1] > pawnWidth ? pawnWidth : rook[1];
+            const maxVal = rook[1] > pawnWidth ? rook[1]:pawnWidth ;
+        console.log(inWay, minVal, maxVal, rook[0], "length")
+        //     if (inWay.length === 0) captures+=1;
+            const pawnRookDiff = maxVal - minVal;
+            const bishopRookDiff = inWay[0][]
+                 {
+            captures+=1
+
+            }
+
+        }
+        if (pawnWidth === rook[1]) {
+            const inWay = bishops.filter(v => v[1] === pawnWidth);
+            const minVal = rook[0] > pawnLength ? pawnLength : rook[0];
+            const maxVal = rook[0] > pawnLength ? rook[0]: pawnLength;
+        console.log(inWay, minVal, maxVal,rook[1], "width")
+            // if (inWay.length === 0) captures+=1;
+
+            if (inWay.length > 0 && minVal < inWay[0][0] < maxVal) {
+                
+            } else {
+            captures+=1
+
+            }
+
+        }
+    }
+    return captures
+        
+};
