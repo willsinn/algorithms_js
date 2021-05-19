@@ -38,3 +38,44 @@
 // 114,162
 // Submissions
 // 206,775
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ var getMinimumDifference = function(root) {
+    let res = Infinity;
+    let arr = [];
+    dfs(root) 
+    
+    function dfs(node) {
+        if (node) {
+            arr.push(node.val)
+            dfs(node.left)
+            dfs(node.right)
+            
+        }
+    }
+    arr = arr.sort((a,b) => {
+        return a - b;
+    })
+    let prev = arr[0];
+    for (let i=1;i<arr.length;i++) {
+        const current = arr[i]
+        const difference = Math.abs(prev - current);
+        if (difference < res) {
+            res = difference;
+        }
+        prev = current;
+    }
+    return res;
+};
