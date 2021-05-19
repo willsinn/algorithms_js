@@ -42,3 +42,28 @@
 // 274,249
 
 
+/**
+ * @param {number[]} stones
+ * @return {number}
+ */
+ var lastStoneWeight = function(stones) {
+    let arr = stones.sort((a,b) => b-a);
+    if (arr.length === 1) {
+        return arr[0];
+    }
+
+    while (arr.length >= 2) {
+        const newArr = arr.slice(2, arr.length)
+        const diff = Math.abs(arr[0]-arr[1]);
+        if (arr.length === 2) {
+            return diff
+        }
+
+        if (diff !== 0) {
+            newArr.push(diff)
+        }
+        newArr.sort((a,b) => b-a);
+        arr = newArr;
+    }
+    return arr[0]
+};
