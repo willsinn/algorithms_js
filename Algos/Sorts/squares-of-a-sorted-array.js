@@ -39,3 +39,20 @@
 // 484,984
 // Submissions
 // 676,246
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+ var sortedSquares = function(nums) {
+    let result = [];
+    
+    for (let i=0; i<nums.length;i++) {
+        const num = Math.abs(nums[i]);
+        const squared = num*num;
+        result.push(squared)
+    }
+    result.sort((a,b)=>a-b);
+    
+    return result
+};
