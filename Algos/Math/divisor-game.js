@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/divisor-game/
+
+
 // 1025. Divisor Game
 // Easy
 
