@@ -79,3 +79,5 @@
     }
     return res;
 };
+
+//BSTs are pre-sorted data structures, sorting the values to find the difference works because of BST left values being smaller than parent node and right values being bigger than parent node.
