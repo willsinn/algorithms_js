@@ -41,3 +41,29 @@
 // 238,616
 // Submissions
 // 455,646
+
+var isAlienSorted = function(words, order) {
+
+    let isAlien = true;
+    let counter = 0;
+    let lexiOrder = order;
+    let prev = null;
+    while (counter < words.length && isAlien) {
+        const letter = words[counter][0];
+        if (prev !== words[counter] && !lexiOrder.includes(letter)) return false;
+        for (let i=0; i<lexiOrder.length; i++) {
+            const char = lexiOrder[i];
+            if (letter === char) {
+                const newOrder = lexiOrder.slice(i+1, lexiOrder.length);
+                
+                lexiOrder = newOrder
+                break;
+            }
+        }
+        prev = words[counter]
+        counter++;
+        
+    }
+    return isAlien
+    
+};
