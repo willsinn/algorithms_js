@@ -50,3 +50,28 @@
 // 259,405
 // Submissions
 // 386,065
+
+
+/**
+ * @param {string[]} emails
+ * @return {number}
+ */
+ var numUniqueEmails = function(emails) {
+    
+    let results = [];
+    for (let i=0;i<emails.length;i++) {
+        const emailSplit = emails[i].split("@");
+        let email = ""
+        for (let j=0;j<emailSplit[0].length;j++) {
+            const letter = emailSplit[0][j];
+            if (letter === ".") continue;
+            if (letter === "+") break;
+            email += letter;
+        }
+        if (emailSplit[1].includes(".com")) {
+            email = `${email}@${emailSplit[1]}`;
+            if (!results.includes(email)) results.push(email)
+        }
+    }
+    return results.length
+};
