@@ -57,3 +57,25 @@
 // 228,254
 // Submissions
 // 318,250
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+ var peakIndexInMountainArray = function(arr) {
+    let result = 0;
+    let counter = 0;
+    let prev = arr[0];
+    
+    for (let i = 1; i <arr.length; i++) {
+        let curr = arr[i];
+        if (prev < curr) {
+            counter++;
+            result = counter;
+        } else {
+            counter = 0;
+        }
+        prev = curr
+    }
+    return result
+};
