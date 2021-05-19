@@ -110,6 +110,55 @@ var numRookCaptures = function(board) {
 
         }
     }
-    return captures
+    return captures    
+};
+
+
+
+
+/**
+ * @param {character[][]} board
+ * @return {number}
+ */
+ const findRook = (board) => {
+    let row = 0, col = 0, shouldBreak = false;
+    while (row < 8) {
+        col = 0;
+        while (col < 8) {
+            if (board[row][col] === 'R') {
+                shouldBreak = true;
+                break;
+            }
+            ++col;
+        }
+        if (shouldBreak) break;
+        ++row;
+    }
+    return { row, col };
+};
+
+const scanLine = (lineIdx, board, mode = 'row') => {
+    let lineToScan = null;
+    if (mode === 'row') {
+        lineToScan = board[lineIdx];
+    } else {
+        lineToScan = board.map(row => row[lineIdx]);
+    }
+    let leftAns = 0;
+    for (let i = 0; lineToScan[i] !== 'R'; ++i) {
+        if (lineToScan[i] === 'p') leftAns = 1;
+        else if (lineToScan[i] === 'B') leftAns = 0;
+    }
+    let rightAns = 0;
+    for (let j = 7; lineToScan[j] !== 'R'; --j) {
+        if (lineToScan[j] === 'p') rightAns = 1;
+        else if (lineToScan[j] === 'B') rightAns = 0;
         
+    }
+    return leftAns + rightAns;
+}
+
+const numRookCaptures = (board) => {
+    const { row, col } = findRook(board);
+    return scanLine(row, board, mode = 'row') + scanLine(col, board, mode = 'column');
 };
