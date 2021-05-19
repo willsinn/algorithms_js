@@ -50,3 +50,28 @@
 // 152,745
 // Submissions
 // 263,777
+
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+ var isMonotonic = function(nums) {
+    let res = true;
+    let counter = 1;
+    let prev = nums[0]
+    let incrementing = null;
+    
+    while(res && counter < nums.length) {
+        const curr = nums[counter]
+        if (incrementing === null && prev < curr) incrementing = true;
+        if (incrementing === null && prev > curr) incrementing = false;
+
+        if (incrementing && prev > curr) res = false;
+        if (!incrementing && prev < curr) res = false;
+        
+        prev = curr
+        counter ++;
+    }
+    return res
+};
