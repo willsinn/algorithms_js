@@ -41,3 +41,26 @@
 // 148,202
 // Submissions
 // 198,217
+
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var repeatedNTimes = function(nums) {
+    let map = {};
+    
+    for (let i=0; i<nums.length;i++) {
+        if (!map[nums[i]]) {
+            map[nums[i]] = 1;
+        } else {
+            map[nums[i]] += 1;
+        }
+    }
+    
+    let uniqueElems = Object.entries(map)
+    const target = uniqueElems.length - 1;
+    const res = uniqueElems.filter(v => v[1] === target);
+    return parseInt(res[0])
+};
