@@ -36,3 +36,37 @@
 // 121,410
 // Submissions
 // 178,492
+
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+ var isUnivalTree = function(root) {
+    const initial = root.val
+    
+    const queue = [root]
+
+while (queue.length > 0) {
+	const vertex = queue.shift()
+
+	if (vertex.val !== initial) {
+		return false;
+	}
+
+	if (vertex.left) queue.push(vertex.left)
+	if (vertex.right) queue.push(vertex.right)
+}
+    return true
+    
+    
+};
