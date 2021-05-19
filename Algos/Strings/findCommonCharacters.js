@@ -38,3 +38,41 @@
 // 108,260
 // Submissions
 // 157,524
+
+
+
+/**
+ * @param {string[]} words
+ * @return {string[]}
+ */
+ var commonChars = function(words) {
+    let res = words[0].split("")
+    let arr = [];
+    
+    if (words.length === 1) return res;
+    
+    for (let i=1;i<words.length;i++) {
+        const word = words[i].split("");
+        
+        for (let j=0; j<word.length;j++) {
+            let letter = word[j];
+            if (res.includes(letter)&&!arr.includes(letter)) {
+                arr.push(letter);
+            }
+                else {
+                    const answerArr = res.filter(v => v===letter).length
+                    const wordMax = res.filter(v => v===letter).length
+                    const maxRepeated = answerArr >= wordMax ? wordMax : answerArr;
+                    const currentRepeated = arr.filter(v => v===letter).length
+                    
+                    if (currentRepeated < maxRepeated) arr.push(letter)
+                
+            }
+            
+        }
+        res = arr;
+        arr = [];
+
+    }
+    return res;
+};
