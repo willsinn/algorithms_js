@@ -44,3 +44,33 @@
 // 161,090
 // Submissions
 // 489,587
+
+
+/**
+ * @param {number[]} arr
+ * @return {boolean}
+ */
+ var validMountainArray = function(arr) {
+    if (arr.length < 3) return false;
+    let result = true;
+    let prev = arr[0]
+    let counter = 1;
+    let decreasing = false;
+    while (arr.length > counter && result) {
+        
+        const curr = arr[counter];
+        if (counter === 1 && prev > curr) result = false;
+        if (prev === curr) result = false;
+        if (prev > curr && !decreasing) {
+            decreasing = true;
+        } 
+        if (decreasing && curr > prev) result = false;
+        prev = curr
+        counter++
+    }
+    if (!decreasing) {
+        return false;
+    } else {
+    return result
+    }
+};
