@@ -34,3 +34,30 @@
 // 27,014
 // Submissions
 // 68,451
+
+
+/**
+ * @param {number[]} difficulty
+ * @param {number[]} profit
+ * @param {number[]} worker
+ * @return {number}
+ */
+ var maxProfitAssignment = function(d, p, w) {
+	let a=[], minD=Infinity;
+	for(let i=0; i<d.length; i++){
+		a.push([d[i],p[i]]);
+		if(d[i]<minD) minD=d[i];
+	}
+	a.sort((x,y)=>x[1]===y[1]?x[0]-y[0]:y[1]-x[1]); //overall: profit descending; particially: difficulty ascending
+	let res = 0;
+	for(let i=0; i<w.length; i++){
+		if(w[i]<minD[i]) continue;
+		for(let j=0; j<a.length; j++){
+			if(w[i]>=a[j][0]){
+				res+=a[j][1];
+				break;
+			}
+		}
+	}
+	return res;
+};
