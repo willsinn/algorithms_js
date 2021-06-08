@@ -51,3 +51,30 @@
 // 24,540
 // Submissions
 // 30,772
+
+
+/**
+ * @param {string} s
+ * @param {number} k
+ * @return {string}
+ */
+ var truncateSentence = function(s, k) {
+    const words = s.split(" ")
+    let result = "";
+    let count = k;
+    
+    for (let i=0; i < words.length; i++) {
+        const word = words[i];
+        
+        if (count > 1) {
+            result += `${word} `;
+            count--;
+        } else if (count === 1) {
+            result += `${word}`;
+            count--;
+        } else if (k === 0) {
+            break;
+        }
+    }
+    return result;
+};
