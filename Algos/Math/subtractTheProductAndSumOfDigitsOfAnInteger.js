@@ -39,3 +39,41 @@
 // 150,383
 // Submissions
 // 175,635
+
+
+
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var subtractProductAndSum = function(n) {
+    let numsStr = `${n}`;
+    
+    let multiplyNums = product(numsStr);
+    let sumNums = sum(numsStr);
+    function product(nums) {
+        let multiply = null;
+        for(let i=0;i <nums.length;i++) {
+            const num = parseInt(nums[i])
+            if (multiply === null) {
+                multiply = num;
+            } else {
+                multiply *= num;
+            }
+        }
+        return multiply;
+    }
+    function sum(nums) {
+        let sum = null;
+        for(let i=0;i <nums.length;i++) {
+            const num = parseInt(nums[i])
+            if (sum === null) {
+                sum = num;
+            } else {
+                sum += num;
+            }
+        }
+        return sum;
+    }
+    return multiplyNums - sumNums
+};
