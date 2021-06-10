@@ -26,3 +26,41 @@
 // 24,566
 // Submissions
 // 49,583
+
+/**
+ * @param {string} date
+ * @return {number}
+ */
+
+ const map = [
+	31,
+	28,
+	31,
+	30,
+	31,
+	30,
+	31,
+	31,
+	30,
+	31,
+	30,
+	31,
+]
+var dayOfYear = function(date) {
+    const s = date.split("-");
+    const month = parseInt(s[1]);
+    const days = parseInt(s[2]);
+    
+    let result = 0;
+    if (month > 1) {
+        
+        for (let i=0; i<month-1;i++) {
+            const daysInMonth = map[i];
+            result += daysInMonth;
+        }
+        
+    }
+    result += days;
+    
+    return result;
+};
